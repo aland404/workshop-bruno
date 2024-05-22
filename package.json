@@ -1,0 +1,10 @@
+{
+  "name": "workshop-bruno",
+  "version": "1.0.0",
+  "description": "This is a workshop to learn the basics of Bruno 🐶",
+  "main": "index.js",
+  "repository": "git@github.com:aland404/workshop-bruno.git",
+  "author": "Alan Duchêne - aland404 <duchene.alan56@gmail.com>",
+  "license": "MIT",
+  "private": false
+}
