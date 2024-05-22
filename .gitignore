@@ -1,3 +1,10 @@
 # IDE and OS
 .idea
 .DS_STORE
+
+# Vitepress
+docs/.vitepress/dist
+docs/.vitepress/cache
+
+# js/ts
+node_modules
