@@ -4,12 +4,16 @@ import { defineConfig } from 'vitepress'
 export default defineConfig({
   title: "Bruno Resistance",
   description: "A la découverte de Bruno, l'API client qui fait de la résistance",
+  lang: 'fr-FR',
+  // outDir: '../vitepress',
+  base: '/workshop-bruno/',
   themeConfig: {
     // https://vitepress.dev/reference/default-theme-config
     nav: [
       { text: 'Home', link: '/' },
       { text: 'Examples', link: '/markdown-examples' },
-      { text: 'Workshop', link: '/chapter-1', activeMatch: 'chapter-.*' }
+      { text: 'Workshop', link: '/chapter-1', activeMatch: 'chapter-.*' },
+      { text: 'Doc Bruno', link: 'https://docs.usebruno.com/introduction' }
     ],
 
     sidebar: [
