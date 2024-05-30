@@ -20,8 +20,9 @@ export default defineConfig({
       {
         text: 'Examples',
         items: [
-          { text: 'Chapitre 1 - briefing', link: '/chapter-1' },
-          { text: 'Chapitre 2 - exploration', link: '/chapter-2' },
+          { text: 'Chapitre 1 - briefing 📜', link: '/chapter-1' },
+          { text: 'Chapitre 2 - configuration ⚙️', link: '/chapter-2' },
+          { text: 'Chapitre 3 - exploration 🛰️', link: '/chapter-3' },
           { text: 'Markdown Examples', link: '/markdown-examples' },
           { text: 'Runtime API Examples', link: '/api-examples' }
         ]
