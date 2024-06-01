@@ -7,6 +7,7 @@ export default defineConfig({
   lang: 'fr-FR',
   base: '/workshop-bruno',
   head: [['link', { rel: "shortcut icon", href: "/workshop-bruno/favicon.ico"}]],
+  ignoreDeadLinks: true,
   themeConfig: {
     // https://vitepress.dev/reference/default-theme-config
     nav: [
