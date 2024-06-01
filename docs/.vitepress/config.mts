@@ -5,8 +5,8 @@ export default defineConfig({
   title: "Bruno Resistance",
   description: "A la découverte de Bruno, l'API client qui fait de la résistance",
   lang: 'fr-FR',
-  // outDir: '../vitepress',
-  base: '/workshop-bruno/',
+  base: '/workshop-bruno',
+  head: [['link', { rel: "shortcut icon", href: "/workshop-bruno/favicon.ico"}]],
   themeConfig: {
     // https://vitepress.dev/reference/default-theme-config
     nav: [
