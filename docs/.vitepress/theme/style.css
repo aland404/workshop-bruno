@@ -3,6 +3,27 @@
  * https://github.com/vuejs/vitepress/blob/main/src/client/theme-default/styles/vars.css
  */
 
+img {
+    border: 3px solid white;
+    border-radius: 15px;
+    margin: 15px;
+    padding: 2px;
+    display: inline-block;
+    vertical-align: top;
+}
+
+details {
+    border-radius: 8px;
+    background-color: #090a0a;
+    color: white;
+    cursor: pointer;
+}
+
+summary {
+    color: #a6accd;
+    padding-top: 12px;
+    padding-left: 16px;
+}
 /**
  * Colors
  *
