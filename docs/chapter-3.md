@@ -62,10 +62,19 @@ Félicitations, vous avez créé votre première requête http avec Bruno 🎉
 
 #### Le Bru language
 
+Bruno utilise le langage Bru pour enregistrer les détails d'une requête API dans un fichier.
+
+C'est un langage de balisage simple avec une sémantique de type JSON.
+
+Ouvrez le fichier représentant la requête que vous venez de créer. Il devrait ressembler à ceci:
+
+<img src="./assets/bruno_bru_file.png" >
 
 
-https://www.brulang.org/
+Pour plus d'information, consultez la [docummentation sur le Bru language](https://www.brulang.org/)
 
+
+#### 
 <Solution>
 
 ```bru
@@ -78,7 +87,7 @@ meta {
 }
 
 get {
-  url: {{base_url}}/star-wars/people
+  url: http://[::1]:3000/star-wars/people
   body: none
   auth: none
 }
