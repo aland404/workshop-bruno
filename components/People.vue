@@ -1,16 +1,16 @@
 <script setup>
 import { ref, onMounted } from 'vue'
-import BattleInfo from "./BattleInfo.vue";
+import PeopleInfo from "./PeopleInfo.vue";
 
-const wars = ref([])
+const people = ref([])
 const fetchHasFailed = ref(false)
 const loading = ref(false)
 
-async function fetchWars() {
+async function fetchPeople() {
   loading.value = true
   try {
-    const response = await fetch("http://localhost:3000/star-wars/wars")
-    wars.value = await response.json()
+    const response = await fetch("http://localhost:3000/star-wars/people")
+    people.value = await response.json()
   } catch(error) {
     fetchHasFailed.value = true
   } finally {
@@ -19,29 +19,26 @@ async function fetchWars() {
 }
 
 onMounted(() => {
-  fetchWars()
+  fetchPeople()
 })
 </script>
 
 <template>
   <div class="block">
-    <div class="title">Guerres en cours dans la galaxie</div>
+    <div class="title">Personnages de la galaxie</div>
     <br/>
 
     <div v-if="loading" class="loader-container"><span class="loader"></span></div>
     <div v-else-if="!fetchHasFailed">
-      <div v-for="war in wars" :key="`war-${war.name}`">
-        <b>Guerre: "{{war.name}}"</b>
-        <ul v-for="battle in war.battles" :key="`battle-${battle.name}`">
-          <BattleInfo :war-slug="war.slug" :battle-slug="battle.slug" />
-        </ul>
+      <div v-for="currentPeople in people" :key="`people-${currentPeople.name}`">
+        <PeopleInfo :people="currentPeople" />
       </div>
     </div>
     <div v-else>Le serveur ne semble pas être démarré en local</div>
     <br />
 
     <div class="button-container">
-      <input type="button" class="button" @click="fetchWars" value="Rafraichir les données" :disabled="loading" />
+      <input type="button" class="button" @click="fetchPeople" value="Rafraichir les données" :disabled="loading" />
     </div>
   </div>
 </template>

@@ -1,5 +1,6 @@
 <script setup>
-import Wars from '../components/Wars.vue'
+import Wars from '../components/Wars.vue';
+import People from '../components/People.vue';
 </script>
 
 # Chapitre 3 - Exploration 🛰
@@ -14,6 +15,8 @@ import Wars from '../components/Wars.vue'
 Parcourez [la documentation de l'API](http://[::1]:3000/api#/)
 
 Cette API permet manipuler les resources (personnages et véhicules) des différentes factions (empire et rébellion).
+
+<People />
 
 Elle permet également de consulter les différentes guerres et batailles qui se déroule en ce moment même dans la galaxie.
 
