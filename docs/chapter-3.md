@@ -35,7 +35,7 @@ Pour ceci cliquez sur les trois petits points (...) dans la partie supérieure d
 
 À ce stade, vous devriez voir votre collection dans le menu de gauche de Bruno.
 
-::: tip INFO ℹ️
+::: info INFO ℹ️
 Vous avez peut-être remarqué que vous n'avez pas eu à créer de compte ou à vous connecter en démarrant Bruno.
 C'est parce que contrairement à la pluspart des autres outils disponibles dans la galaxie, Bruno est complètement indépendant vis-à-vis du cloud.
 
@@ -47,7 +47,7 @@ C'est pour cela que lorsque vous allez créer une collection, Bruno vous demande
 
 Une fois la collection prête, créez une requête pour lire les information des personnages de la galaxie en requêtant l'api GET: http://localhost:3000/star-wars/people
 
-Pour se faire, cliquez sur les trois petits points (...) à droite du nom de votre collection, cliquez sur "New Request", complétez le formulaire puis cliquez sur le bouton "Create".
+Pour se faire, faites un clic droit sur le nom de votre collection ou cliquez sur les trois petits points (...) à droite du nom de celle-ci, cliquez sur "New Request", complétez le formulaire puis cliquez sur le bouton "Create".
 
 <img src="./assets/bruno_new_request_menu.png" width="300" height="300">
 <img src="./assets/bruno_new_request_popup.png" width="300" height="300">
@@ -74,23 +74,32 @@ Ouvrez le fichier représentant la requête que vous venez de créer. Il devrait
 Pour plus d'information, consultez la [docummentation sur le Bru language](https://www.brulang.org/)
 
 
-#### 
-<Solution>
+#### Organisation par dossier et enrichissement de la collection
 
-```bru
-# .bru file to set in a bru collection folder
-# Request to get all the people from the star wars api
-meta {
-  name: Get all characters
-  type: http
-  seq: 1
-}
+Il est possible d'organiser ses collections à l'aide de dossiers, pour ceci faites un clic droit sur la collection et cliquez sur "Create folder", complétez le formulaire et cliquez sur "Create".
 
-get {
-  url: http://[::1]:3000/star-wars/people
-  body: none
-  auth: none
-}
-```
+Créez quatre dossiers pour les requêtes concernant les personnages, les guerres, les batailles et le système d'authentification.
 
+En vous aidant de [la documentation de l'API](http://[::1]:3000/api#/) complétez les dossiers en créant de nouvelles requêtes
+- pour les personnages
+  - voir les personnages d'une faction
+  - voir les informations d'un personnage
+- pour les guerres
+  - voir les informations de toutes les guerres
+  - voir les informations d'une guerre
+  - voir le résumé d'une guerre
+- pour les batailles (le dossier peut se trouver dans celui des guerres)
+  - voir une bataille
+  - voir le détails d'une bataille
+- pour l'authentification
+  - récupérer son passport galactique
+
+::: tip TIP
+Pour gagner du temps sur la création de nouvelles requêtes, vous pouvez repartir d'une requête précédente en la clonant (clic droit, "Clone").
+:::
+
+<Solution title="Besoint d'un coup de main ?">
+Les solutions à ce chapitre sont dans le dossier solutions/chapter-3
 </Solution>
+
+À ce stade, vous avez déjà une collection bien remplie, il va maintenant falloir aller plus loin grâce à la gestion des variables d'environnements et des secrets.
