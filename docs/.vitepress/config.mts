@@ -26,6 +26,9 @@ export default defineConfig({
           { text: 'Chapitre 2 - configuration ⚙️', link: '/chapter-2' },
           { text: 'Chapitre 3 - exploration 🛰️', link: '/chapter-3' },
           { text: 'Chapitre 4 - la force des variables 💪', link: '/chapter-4' },
+          { text: 'Chapitre 5 - Les scripts à la rescousse 🚑', link: '/chapter-5' },
+          { text: 'Chapitre 6 - Renforcement de la sécurité 🥋', link: '/chapter-6' },
+          { text: 'Chapitre 7 - Le pouvoir de la CI 🤖⚡️', link: '/chapter-7' },
           { text: 'Markdown Examples', link: '/markdown-examples' },
           { text: 'Runtime API Examples', link: '/api-examples' }
         ]
