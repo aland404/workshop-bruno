@@ -18,9 +18,9 @@ Vous aurez deux missions à mener à bien en parallèle:
     - Gestion des variables d'environnement et de collection
     - Gestion des secrets
     - Ecriture de scripts et de tests
-  - BONUS
     - Ajouter des librairies externes 
-    - Écrire des tests automatisés pour valider l'API Star Wars pour 
+    - Écrire des tests automatisés pour valider l'API
+  - BONUS
     - Intégrer et exécuter les tests avec Bruno CLI dans une pipeline CI/CD pour empêcher que l'empire ne puisse à nouveau revenir
 - Gagner la guerre contre l'empire ⚔️⭐
   - Connaitre vos ressources et les ressources de l'ennemi
