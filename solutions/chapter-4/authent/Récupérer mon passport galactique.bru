@@ -1,0 +1,16 @@
+meta {
+  name: Récupérer mon passport galactique
+  type: http
+  seq: 1
+}
+
+post {
+  url: {{base_url}}/star-wars/auth/galactic-passport
+  body: formUrlEncoded
+  auth: none
+}
+
+body:form-urlencoded {
+  registrationNumber: {{registration_number}}
+  password: {{password}}
+}
