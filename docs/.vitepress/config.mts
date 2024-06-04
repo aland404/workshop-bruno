@@ -14,6 +14,7 @@ export default defineConfig({
       { text: 'Home', link: '/' },
       { text: 'Examples', link: '/markdown-examples' },
       { text: 'Workshop', link: '/chapter-1', activeMatch: 'chapter-.*' },
+      { text: 'Mon compte', link: '/personnal-info', activeMatch: 'personnal-info' },
       { text: 'Doc Bruno', link: 'https://docs.usebruno.com/introduction' }
     ],
 

@@ -92,7 +92,28 @@ En vous aidant de [la documentation de l'API](http://[::1]:3000/api#/) compléte
   - voir une bataille
   - voir le détails d'une bataille
 - pour l'authentification
-  - récupérer son passport galactique
+  - récupérer son passport galactique (requête POST)
+
+Pour récupérer un passport galactique, vous allez devoir passer un body à votre requête (cf [doc API](http://[::1]:3000/api#/auth/AuthController_getGalacticPassport)).
+
+Pour renseigner le body, cliquez sur l'onglet "Body" dans Bruno, puis sur "No body" et sélection "JSON" dans le menu déroulant qui s'affiche.
+
+<img src="./assets/bruno_set_json_body.png" width="300" height="300">
+
+Dans ce body il vous faura renseigner un numéro de matricule (registrationNumber) et un mot de passe (password).
+
+Pour récupérer ces informations, rdv sur la page ["Mes informations"](personnal-info.html)
+
+<Solution>
+
+```json
+{
+  "registrationNumber": "7728398-9879870-8765007-42",
+  "password": "onlyYouCanSaveTheGalaxy"
+}
+```
+
+</Solution>
 
 ::: tip TIP
 Pour gagner du temps sur la création de nouvelles requêtes, vous pouvez repartir d'une requête précédente en la clonant (clic droit, "Clone").
