@@ -49,8 +49,8 @@ Utilisez vos variables dans vos requêtes.
 Pour que Bruno interprète des variables dans un body, il faut utiliser un body de type "Form URL Encoded"
 :::
 
-<img src="./assets/bruno_set_body_form_url_encoded.png" width="300" height="300">
-<img src="./assets/bruno_set_body_with_env_vars.png" width="300" height="300">
+<img src="./assets/bruno_set_body_form_url_encoded.png" width="200" height="200">
+<img src="./assets/bruno_set_body_with_env_vars.png" width="400" height="400">
 
 Prenez un instant pour examiner le fichier bru de votre requête pour récupérer votre passport galactique.
 
