@@ -14,7 +14,7 @@ import People from '../components/People.vue';
 
 Parcourez [la documentation de l'API](http://[::1]:3000/api#/)
 
-Cette API permet manipuler les resources (personnages et véhicules) des différentes factions (empire et rébellion).
+Cette API permet manipuler les types de personnages des différentes factions (empire et rébellion).
 
 <People />
 

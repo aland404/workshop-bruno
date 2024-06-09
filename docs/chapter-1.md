@@ -18,10 +18,10 @@ Vous aurez deux missions à mener à bien en parallèle:
     - Gestion des variables d'environnement et de collection
     - Gestion des secrets
     - Ecriture de scripts et de tests
-    - Ajouter des librairies externes 
     - Écrire des tests automatisés pour valider l'API
   - BONUS
     - Intégrer et exécuter les tests avec Bruno CLI dans une pipeline CI/CD pour empêcher que l'empire ne puisse à nouveau revenir
+    - Ajouter des librairies externes
 - Gagner la guerre contre l'empire ⚔️⭐
   - Connaitre vos ressources et les ressources de l'ennemi
   - Déployer suffisamment de ressources pour gagner les batailles
@@ -34,13 +34,13 @@ Vous aurez deux missions à mener à bien en parallèle:
 Suivez les étapes de ce workshop 😉
 
 ### Gagner la guerre contre l'empire ⚔️⭐
-Pour qu'une **"faction"** (l'empire ou la rébellion) gagne une guerre contre une autre faction, il faut que celle-ci remporte plus de batailles dans cette guerre que l'autre faction.
+Pour qu'une **"faction"** (l'empire ou la rébellion) gagne une guerre contre une autre faction, il faut que celle-ci remporte plus de batailles dans cette guerre que l'autre faction. À nombre de bataille égal l'empire remporte la guerre.
 
 Pour gagner une bataille, il faut que les forces de cette faction soient plus puissantes que les forces de la faction adverse pendant cette bataille.
 
-Chaque personnage ou véhicule est rattaché à une faction et possède une certaine force qui aide sa faction à remporter une bataille si celui-ci ou celle-ci est présente pendant la bataille.
+Chaque personnage est rattaché à une faction et possède une certaine force qui aide sa faction à remporter une bataille si celui-ci ou celle-ci est présente pendant la bataille.
 
 Si la somme des forces d'une même faction est supérieure à la somme des forces de la faction adverse, alors la bataille est gagnée. Si les forces sont équivalentes, l'empire remporte la bataille.
 
-Il faudra donc gérer les resources (personnages et véhicules) de la rébellion pour que les forces alliés soient suffisantes pour gagner suffisamment de batailles pour finalement gagner la guerre.
+Il faudra donc gérer les type de personnages de la rébellion pour que les forces alliés soient suffisantes pour gagner suffisamment de batailles pour finalement gagner la guerre.
 Attention, vos ressources sont limitées!
