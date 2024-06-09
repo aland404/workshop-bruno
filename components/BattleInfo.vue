@@ -3,7 +3,11 @@ import { ref, onMounted } from 'vue';
 
 const props = defineProps({
   warSlug: String,
-  battleSlug: String
+  battleSlug: String,
+  displayAlone: {
+    type: Boolean,
+    default: false
+  }
 })
 
 const battle = ref(undefined)
@@ -24,14 +28,30 @@ onMounted(() => {
 <template>
   <div v-if="loading" class="loader-container"><span class="loader"></span></div>
 
-  <div v-if="battle">
+  <div v-if="battle" :class="displayAlone && 'block'">
     <b>Bataille: {{ battle.name }}</b>
     <div class="winner">--> Gagnant: {{ battle.winner.faction }}</div>
     <div class="loser">--> Perdant: {{ battle.loser.faction }}</div>
+
+    <div v-if="displayAlone">
+      <br/>
+      <div v-if="battle.loser.faction === 'rebellion'" class="loser">Vous perdez la guerre... 😢</div>
+      <div v-else class="winner">Vous gagnez la guerre... 💪</div>
+    </div>
+  </div>
+
+
+  <div v-if="displayAlone" class="button-container">
+    <input type="button" class="button" @click="fetchBattleSummary" value="Rafraichir les données" :disabled="loading" />
   </div>
 </template>
 
 <style scoped>
+.block {
+  border: 1px solid white;
+  padding: 0.5rem;
+  border-radius: 5px;
+}
 .loser {
   color: lightcoral;
   padding-left: 1rem;
@@ -75,6 +95,27 @@ onMounted(() => {
     right: 0;
     bottom: 0;
     transform: translate(-150%, -150%);
+  }
+}
+
+.button-container {
+  display: flex;
+  justify-content: right;
+  .button {
+    cursor: pointer;
+    background-color: var(--vp-c-green-2);
+    border: 1px solid var(--vp-c-divider);
+    border-radius: 8px;
+    padding: 5px;
+    transition: border-color 0.25s;
+  }
+  .button:hover {
+    border-color: var(--vp-c-green-1);
+  }
+  .button:disabled {
+    background-color: lightgray;
+    border-color: lightgray;
+    cursor: auto;
   }
 }
 
