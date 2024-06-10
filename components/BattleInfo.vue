@@ -30,13 +30,13 @@ onMounted(() => {
 
   <div v-if="battle" :class="displayAlone && 'block'">
     <b>Bataille: {{ battle.name }}</b>
-    <div class="winner">--> Gagnant: {{ battle.winner.faction }}</div>
-    <div class="loser">--> Perdant: {{ battle.loser.faction }}</div>
+    <div class="winner">--> Gagnant: {{ battle.winner.faction }} - Puissance: {{ battle.winner.totalPower }}</div>
+    <div class="loser">--> Perdant: {{ battle.loser.faction }} - Puissance: {{ battle.loser.totalPower }}</div>
 
     <div v-if="displayAlone">
       <br/>
-      <div v-if="battle.loser.faction === 'rebellion'" class="loser">Vous perdez la guerre... 😢</div>
-      <div v-else class="winner">Vous gagnez la guerre... 💪</div>
+      <div v-if="battle.loser.faction === 'rebellion'" class="loser">Vous perdez cette bataille... 😢</div>
+      <div v-else class="winner">Vous gagnez cette bataille! 💪</div>
     </div>
   </div>
 
