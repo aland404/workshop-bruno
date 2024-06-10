@@ -98,5 +98,5 @@ ___Faites progresser les wookies pour gagner la bataille `Envahisseurs à Kashyy
 ::: tip
 Renforcer les rangs de la résitance en cliquant de manière effrénée est plutôt répétitif, long et contraignant... 😕
 
-Il est possible d'exécuter les requêtes d'un dossier ou d'une collection en ligne de comande avec la CLI Bruno, nous le verrons dans le chapitre 7 (dans l'interface, il faut posséder la version payante de Bruno). 
+Il est possible d'exécuter les requêtes d'un dossier ou d'une collection en ligne de comande avec la CLI Bruno, nous le verrons dans le chapitre 7 (pour le faire depuis l'interface, il faut posséder la version payante de Bruno). 
 :::
