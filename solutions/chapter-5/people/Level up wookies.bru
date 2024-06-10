@@ -1,0 +1,15 @@
+meta {
+  name: Level up wookies
+  type: http
+  seq: 4
+}
+
+post {
+  url: http://[::1]:3000/star-wars/people/wookie/level-up
+  body: none
+  auth: bearer
+}
+
+auth:bearer {
+  token: {{galactic_passport}}
+}
