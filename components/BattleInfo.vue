@@ -38,11 +38,9 @@ onMounted(() => {
       <div v-if="battle.loser.faction === 'rebellion'" class="loser">Vous perdez cette bataille... 😢</div>
       <div v-else class="winner">Vous gagnez cette bataille! 💪</div>
     </div>
-  </div>
-
-
-  <div v-if="displayAlone" class="button-container">
-    <input type="button" class="button" @click="fetchBattleSummary" value="Rafraichir les données" :disabled="loading" />
+    <div class="button-container">
+      <input type="button" class="button" @click="fetchBattleSummary" value="Rafraichir les données" :disabled="loading" />
+    </div>
   </div>
 </template>
 
