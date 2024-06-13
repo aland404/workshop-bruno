@@ -2,11 +2,9 @@
 &nbsp;
 
 #### Objectif de la Mission 🎯
-- Découverte de Bruno CLI
 - Découverte de l'intégration de Bruno dans une pipeline de delivery
 - Empêcher l'empire de revenir prendre sa revanche
 
-## Bruno CLI
 
 ## Intégration dans une pipeline de delivery
 
