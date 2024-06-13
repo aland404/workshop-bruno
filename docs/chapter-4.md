@@ -54,7 +54,7 @@ Pour que Bruno interprète des variables dans un body, il faut utiliser un body 
 
 Prenez un instant pour examiner le fichier bru de votre requête pour récupérer votre passport galactique.
 
-<Solution title="Besoint d'un coup de main ?">
+<Solution title="Besoin d'un coup de main ?">
 Les solutions à ce chapitre sont dans les dossiers solutions/chapter-4 et solutions/environments
 </Solution>
 

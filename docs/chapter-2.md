@@ -40,7 +40,7 @@ Vous devriez voir les logs suivants:
 
 ![Server started successfully](./assets/server_starts_with_success.png)
 
-[La documentation de l'API](http://[::1]:3000/api#/) maintenant accessible
+[La documentation de l'API](http://localhost:3000/api#/) maintenant accessible
 
 ## Installation de Bruno
 

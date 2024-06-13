@@ -40,7 +40,7 @@ Il est également possible de configurer, lire et modifier des variables qui ser
 
 Il est possible de configurer des variables de deux manières, programmatique et déclarative.
 
-### Variables programmatiques
+### Variables scriptées
 
 Pour manipuler des variables de manière programmatiques, il faudra le faire dans les Pre Script et/ou Post Script via l'objet bru et son API ([documentation ici]()).
 
@@ -83,7 +83,7 @@ ___A vous de jouer!___
 Pour vérifier si vos variables sont correctement configurées, vous pouvez faire un console.log ou cliquez sur l'icône en forme d'oeil en haut à droite de Bruno. Elle permet d'afficher les variables de collection et d'environnement.
 :::
 
-<Solution title="Besoint d'un coup de main ?">
+<Solution title="Besoin d'un coup de main ?">
 Les solutions à ce chapitre sont dans les dossiers solutions/chapter-5 et solutions/environments
 </Solution>
 
@@ -99,8 +99,8 @@ ___Faites progresser les wookies pour gagner la bataille `Envahisseurs à Kashyy
     displayAlone
 />
 
-::: tip
+::: tip Info
 Renforcer les rangs de la résitance en cliquant de manière effrénée est plutôt répétitif, long et contraignant... 😕
 
-Il est possible d'exécuter les requêtes d'un dossier ou d'une collection en ligne de comande avec la CLI Bruno, nous le verrons dans le prochain chapitre (pour le faire depuis l'interface, il faut posséder la version payante de Bruno). 
+Il est possible d'exécuter en boucle les requêtes d'un dossier ou d'une collection depuis l'interface, cependant il faut posséder la version payante de Bruno. 
 :::

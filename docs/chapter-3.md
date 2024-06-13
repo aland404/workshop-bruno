@@ -12,7 +12,7 @@ import People from '../components/People.vue';
 
 ## Découverte de l'API Star Wars
 
-Parcourez [la documentation de l'API](http://[::1]:3000/api#/)
+Parcourez [la documentation de l'API](http://localhost:3000/api#/)
 
 Cette API permet manipuler les types de personnages des différentes factions (empire et rébellion).
 
@@ -80,7 +80,7 @@ Il est possible d'organiser ses collections à l'aide de dossiers, pour ceci fai
 
 Créez quatre dossiers pour les requêtes concernant les personnages, les guerres, les batailles et le système d'authentification.
 
-En vous aidant de [la documentation de l'API](http://[::1]:3000/api#/) complétez les dossiers en créant de nouvelles requêtes
+En vous aidant de [la documentation de l'API](http://localhost:3000/api#/) complétez les dossiers en créant de nouvelles requêtes
 - pour les personnages
   - voir les personnages d'une faction
   - voir les informations d'un personnage
@@ -94,7 +94,7 @@ En vous aidant de [la documentation de l'API](http://[::1]:3000/api#/) compléte
 - pour l'authentification
   - récupérer son passport galactique (requête POST)
 
-Pour récupérer un passport galactique, vous allez devoir passer un body à votre requête (cf [doc API](http://[::1]:3000/api#/auth/AuthController_getGalacticPassport)).
+Pour récupérer un passport galactique, vous allez devoir passer un body à votre requête (cf [doc API](http://localhost:3000/api#/auth/AuthController_getGalacticPassport)).
 
 Pour renseigner le body, cliquez sur l'onglet "Body" dans Bruno, puis sur "No body" et sélection "JSON" dans le menu déroulant qui s'affiche.
 
@@ -119,7 +119,7 @@ Pour récupérer ces informations, rdv sur la page ["Mes informations"](personna
 Pour gagner du temps sur la création de nouvelles requêtes, vous pouvez repartir d'une requête précédente en la clonant (clic droit, "Clone").
 :::
 
-<Solution title="Besoint d'un coup de main ?">
+<Solution title="Besoin d'un coup de main ?">
 Les solutions à ce chapitre sont dans le dossier solutions/chapter-3
 </Solution>
 
