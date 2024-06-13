@@ -1,0 +1,53 @@
+tests {
+  const body = res.getBody();
+  const status = res.getStatus();
+  
+  test("Requête fiable: le statut http de la requête est différent de 666", function() {
+    expect(status).to.not.equal(666);
+  });
+  test("Requête fiable: le type de retour est un objet ou une liste", function() {
+    expect(typeof body === 'object').to.be.true
+  });
+  test("Requête fiable: aucun champ ne contient 'Vive l'empire'", function() {
+    const searchText = "Vive l'empire!";
+    const result = containsText(res.body, searchText.toUpperCase());
+    expect(result).to.be.false
+  });
+  test("Requête fiable: la date est la date du jour", function() {
+    if(body.currentDate) {
+      expect(body.currentDate).to.equal(getCurrentDateFormatted())
+    }
+  });
+  
+  function getCurrentDateFormatted() {
+    const today = new Date()
+    const day = String(today.getDate()).padStart(2, '0')
+    const month = String(today.getMonth() + 1).padStart(2, '0') // Les mois commencent à 0
+    const year = today.getFullYear()
+  
+    return `${day}/${month}/${year}`
+  }
+  
+  function containsText(obj, text) {
+    if (Array.isArray(obj)) {
+      for (let item of obj) {
+        if (containsText(item, text)) {
+          return true;
+        }
+      }
+    } else if (typeof obj === 'object' && obj !== null) {
+      for (let key in obj) {
+        if (obj.hasOwnProperty(key)) {
+          if (containsText(obj[key], text)) {
+            return true;
+          }
+        }
+      }
+    } else if (typeof obj === 'string') {
+      if (obj.toUpperCase().includes(text)) {
+        return true;
+      }
+    }
+    return false;
+  }
+}

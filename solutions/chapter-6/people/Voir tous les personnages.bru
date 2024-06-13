@@ -1,0 +1,22 @@
+meta {
+  name: Voir tous les personnages
+  type: http
+  seq: 1
+}
+
+get {
+  url: {{base_url}}/star-wars/people
+  body: none
+  auth: none
+}
+
+assert {
+  res.status: eq 200
+}
+
+tests {
+  test("Renvoie un statut http 200", function() {
+    const data = res.getBody();
+    expect(res.getStatus()).to.equal(200);
+  });
+}
