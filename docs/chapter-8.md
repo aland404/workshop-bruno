@@ -2,7 +2,7 @@
 &nbsp;
 
 #### Objectif de la Mission 🎯
-- Découverte de l'utilisation de librairies
+- Découvrir l'utilisation de librairies
 
 
 ## Lirairies

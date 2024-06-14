@@ -11,12 +11,19 @@ const props = defineProps({
 })
 
 const battle = ref(undefined)
+const fetchHasFailed = ref(false)
 const loading = ref(false)
+
 async function fetchBattleSummary() {
   loading.value = true
-  const response = await fetch(`http://localhost:3000/star-wars/wars/${props.warSlug}/battles/${props.battleSlug}/summary`)
-  battle.value = await response.json()
-  loading.value = false
+  try {
+    const response = await fetch(`http://localhost:3000/star-wars/wars/${props.warSlug}/battles/${props.battleSlug}/summary`)
+    battle.value = await response.json()
+  } catch(error) {
+    fetchHasFailed.value = true
+  } finally {
+    loading.value = false
+  }
 }
 
 onMounted(() => {
@@ -27,21 +34,21 @@ onMounted(() => {
 
 <template>
   <div v-if="loading" class="loader-container"><span class="loader"></span></div>
-
-  <div v-if="battle" :class="displayAlone && 'block'">
+  <div v-else-if="battle" :class="displayAlone && 'block'">
     <b>Bataille: {{ battle.name }}</b>
     <div class="winner">--> Gagnant: {{ battle.winner.faction }} - Puissance: {{ battle.winner.totalPower }}</div>
     <div class="loser">--> Perdant: {{ battle.loser.faction }} - Puissance: {{ battle.loser.totalPower }}</div>
 
     <div v-if="displayAlone">
-      <br/>
-      <div v-if="battle.loser.faction === 'rebellion'" class="loser">Vous perdez cette bataille... 😢</div>
-      <div v-else class="winner">Vous gagnez cette bataille! 💪</div>
-    </div>
-    <div class="button-container">
-      <input type="button" class="button" @click="fetchBattleSummary" value="Rafraichir les données" :disabled="loading" />
+        <br/>
+        <div v-if="battle.loser.faction === 'rebellion'" class="loser">Vous perdez cette bataille... 😢</div>
+        <div v-else class="winner">Vous gagnez cette bataille! 💪</div>
+        <div class="button-container">
+          <input type="button" class="button" @click="fetchBattleSummary" value="Rafraichir les données" :disabled="loading" />
+        </div>
     </div>
   </div>
+  <div v-else>Le serveur ne semble pas être démarré en local</div>
 </template>
 
 <style scoped>

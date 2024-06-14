@@ -7,7 +7,7 @@ import BattleInfo from '../components/BattleInfo.vue';
 &nbsp;
 
 #### Objectif de la Mission 🎯
-- Découverte des scripts dans Bruno
+- Découvrir les scripts dans Bruno
 - Renforcer les rangs de la rébellion
 
 ## Pre Request scripts
@@ -84,7 +84,9 @@ Pour vérifier si vos variables sont correctement configurées, vous pouvez fair
 :::
 
 <Solution title="Besoin d'un coup de main ?">
-Les solutions à ce chapitre sont dans les dossiers solutions/chapter-5 et solutions/environments
+
+Les solutions à ce chapitre sont dans les dossiers [solutions/chapter-5](https://github.com/aland404/workshop-bruno/tree/main/solutions/chapter-5) et [solutions/environments](https://github.com/aland404/workshop-bruno/tree/main/solutions/environments)
+
 </Solution>
 
 ### Renforcer les rangs

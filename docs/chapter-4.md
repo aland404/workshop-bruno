@@ -2,8 +2,8 @@
 &nbsp;
 
 #### Objectif de la Mission 🎯
-- Découverte des variables d'environnement
-- Découverte de la gestion des secrets
+- Découvrir les variables d'environnement
+- Découvrir la gestion des secrets
 
 ## Les variables d'environnement
 
@@ -55,7 +55,9 @@ Pour que Bruno interprète des variables dans un body, il faut utiliser un body 
 Prenez un instant pour examiner le fichier bru de votre requête pour récupérer votre passport galactique.
 
 <Solution title="Besoin d'un coup de main ?">
-Les solutions à ce chapitre sont dans les dossiers solutions/chapter-4 et solutions/environments
+
+Les solutions à ce chapitre sont dans les dossiers [solutions/chapter-4](https://github.com/aland404/workshop-bruno/tree/main/solutions/chapter-4) et [solutions/environments](https://github.com/aland404/workshop-bruno/tree/main/solutions/environments)
+
 </Solution>
 
 Nous pouvons aller encore plus loin grâce à la notion de scripts.

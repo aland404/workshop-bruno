@@ -2,7 +2,7 @@
 &nbsp;
 
 #### Objectif de la Mission 🎯
-- Découverte de l'intégration de Bruno dans une pipeline de delivery
+- Réussir l'intégration de Bruno dans une pipeline de delivery
 - Empêcher l'empire de revenir prendre sa revanche
 
 

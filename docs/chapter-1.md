@@ -10,17 +10,17 @@ Vous utiliserez Bruno, un nouvel outil de la résistance, pour intéragir avec l
 
 Vous aurez deux missions à mener à bien en parallèle:
 1. Découvrir les fonctionnalités de Bruno
-2. Utiliser les connaissances que vous emmagasinerez pour aide la résistance à gagner la guerre contre l'empire!
+2. Utiliser les connaissances que vous emmagasinerez pour aider la résistance à gagner la guerre contre l'empire!
 
 - Découvrir l'outil Bruno 🐶
     - Créer des collections et des requêtes
-    - Découverte du Bru markup language
-    - Gestion des variables d'environnement et de collection
-    - Gestion des secrets
-    - Ecriture de scripts et de tests
+    - Découvrir du Bru markup language
+    - Gérer des variables d'environnement et de collection
+    - Gérer des secrets
+    - Écrire des scripts et des tests
     - Écrire des tests automatisés pour valider l'API
   - BONUS
-    - Intégrer et exécuter les tests avec Bruno CLI dans une pipeline CI/CD pour empêcher que l'empire ne puisse à nouveau revenir
+    - Exécuter les tests dans une pipeline CI/CD pour empêcher que l'empire ne puisse à nouveau revenir
     - Ajouter des librairies externes
 - Gagner la guerre contre l'empire ⚔️⭐
   - Connaitre vos ressources et les ressources de l'ennemi

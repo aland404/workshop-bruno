@@ -2,8 +2,8 @@
 &nbsp;
 
 #### Objectif de la Mission 🎯
-- Découverte des tests automatisés
-- Découverte de Bruno CLI
+- Découvrir les tests automatisés
+- Découvrir Bruno CLI
 - Préparer la victoire de la rébellion
 
 ## Tests automatisés
@@ -203,4 +203,10 @@ bru run --env env_name # où env_name est le nom que vous avez donné à votre e
 ### Supprimez celles corrompues par l'empire
 
 ### Allons gagner cette foutue guerre!
+
+<Solution title="Besoin d'un coup de main ?">
+
+Les solutions à ce chapitre sont dans les dossiers [solutions/chapter-6](https://github.com/aland404/workshop-bruno/tree/main/solutions/chapter-6) et [solutions/environments](https://github.com/aland404/workshop-bruno/tree/main/solutions/environments)
+
+</Solution>
 

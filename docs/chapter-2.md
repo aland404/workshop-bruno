@@ -14,6 +14,8 @@ Assurez-vous d'avoir [NodeJS](https://nodejs.org/en/) en version 16 ou supérieu
 node -v # v16+
 ```
 
+([Cliquer ici pour installer node si besoin](https://nodejs.org/en/download/package-manager))
+
 ## Récupération de l'API Star Wars
 
 - Clonez le code source du codelab
@@ -22,17 +24,23 @@ node -v # v16+
 git clone https://github.com/aland404/star-wars-api.git
 ```
 
-- Puis installez les dépendances
+(_Si vous n'avez pas git d'installé vous pouvez également télécharger le dossier sur votre poste_)
+
+- Une fois le projet récupéré sur votre poste, mettez vous à la racine de celui-ci et installez les dépendances
 
 ```shell
-# yarn OR pnpm OR npm
+# selon votre gestionnaire de paquet
+npm install
+# OR
 yarn install
+# OR
+pnpm install
 ```
 
 ## Démarrage de l'API
 
 ```shell
-# yarn OR pnpm OR npm
+# selon votre gestionnaire de paquet, yarn OR pnpm OR npm
 yarn run start
 ```
 
@@ -40,9 +48,11 @@ Vous devriez voir les logs suivants:
 
 ![Server started successfully](./assets/server_starts_with_success.png)
 
-[La documentation de l'API](http://localhost:3000/api#/) maintenant accessible
+[La documentation de l'API](http://localhost:3000/api#/) est maintenant accessible
 
 ## Installation de Bruno
+
+Deux possibilités pour installer Bruno.
 
 - Installation via un gestionnaire de paquets
 

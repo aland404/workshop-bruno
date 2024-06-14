@@ -7,8 +7,8 @@ import People from '../components/People.vue';
 &nbsp;
 
 #### Objectif de la Mission 🎯
-- Découverte de l'API Star Wars
-- Découverte de l'outil Bruno
+- Découvrir l'API Star Wars
+- Découvrir de l'outil Bruno
 
 ## Découverte de l'API Star Wars
 
@@ -28,7 +28,7 @@ Elle permet également de consulter les différentes guerres et batailles qui se
 
 Commencez par créer une collection et des requêtes dans celle-ci.
 
-Pour ceci cliquez sur les trois petits points (...) dans la partie supérieure droite du menu de gauche de Bruno, cliquez sur "Create Collection", complétez le formulaire puis cliquez sur le bouton "Create".
+Pour ceci cliquez sur les trois petits points (...) dans la partie supérieure droite du menu de gauche de Bruno, cliquez sur "Create Collection", complétez le formulaire (gardez en tête le chemin que vous choisirez pour sauvegarder votre collection, le champ `Location`) puis cliquez sur le bouton "Create".
 
 <img src="./assets/bruno_create_collection_menu.png" width="300" height="300">
 <img src="./assets/bruno_create_collection_popup.png" width="300" height="300">
@@ -37,7 +37,7 @@ Pour ceci cliquez sur les trois petits points (...) dans la partie supérieure d
 
 ::: info INFO ℹ️
 Vous avez peut-être remarqué que vous n'avez pas eu à créer de compte ou à vous connecter en démarrant Bruno.
-C'est parce que contrairement à la pluspart des autres outils disponibles dans la galaxie, Bruno est complètement indépendant vis-à-vis du cloud.
+C'est parce que contrairement à la plupart des autres outils disponibles dans la galaxie, Bruno est complètement indépendant vis-à-vis du cloud.
 
 Toutes vos requêtes, collections, etc., manipulées seront stockées en local, sur votre poste.
 C'est pour cela que lorsque vous allez créer une collection, Bruno vous demandera un chemin pour savoir où la stocker sur votre poste (champ location du formulaire).
@@ -54,6 +54,8 @@ Pour se faire, faites un clic droit sur le nom de votre collection ou cliquez su
 
 Une fenêtre représentant votre requête s'ouvre sur la partie droite.
 
+(_pensez à sauvegarder au fur et à mesure vos requêtes (ctrl + s ou cmd + s en fonction de votre OS)_)
+
 Éxecutez la requêtes en cliquant sur la flèche à droite de cette nouvelle fenêtre.
 
 <img src="./assets/bruno_execute_request.png">
@@ -66,7 +68,9 @@ Bruno utilise le langage Bru pour enregistrer les détails d'une requête API da
 
 C'est un langage de balisage simple avec une sémantique de type JSON.
 
-Ouvrez le fichier représentant la requête que vous venez de créer. Il devrait ressembler à ceci:
+Ouvrez le fichier représentant la requête que vous venez de créer. Il se trouve là où vous avec choisi de sauvegarder votre collection.
+
+Il devrait ressembler à ceci:
 
 <img src="./assets/bruno_bru_file.png" >
 
@@ -90,7 +94,7 @@ En vous aidant de [la documentation de l'API](http://localhost:3000/api#/) compl
   - voir le résumé d'une guerre
 - pour les batailles (le dossier peut se trouver dans celui des guerres)
   - voir une bataille
-  - voir le détails d'une bataille
+  - voir le résumé d'une bataille
 - pour l'authentification
   - récupérer son passport galactique (requête POST)
 
@@ -120,7 +124,9 @@ Pour gagner du temps sur la création de nouvelles requêtes, vous pouvez repart
 :::
 
 <Solution title="Besoin d'un coup de main ?">
-Les solutions à ce chapitre sont dans le dossier solutions/chapter-3
+
+Les solutions à ce chapitre sont dans le dossier [solutions/chapter-3](https://github.com/aland404/workshop-bruno/tree/main/solutions/chapter-3)
+
 </Solution>
 
 À ce stade, vous avez déjà une collection bien remplie, il va maintenant falloir aller plus loin grâce à la gestion des variables d'environnements et des secrets.
