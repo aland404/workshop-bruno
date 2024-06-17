@@ -48,7 +48,7 @@ onMounted(() => {
         </div>
     </div>
   </div>
-  <div v-else>Le serveur ne semble pas être démarré en local</div>
+  <div v-else class="block">Le serveur ne semble pas être démarré en local</div>
 </template>
 
 <style scoped>
