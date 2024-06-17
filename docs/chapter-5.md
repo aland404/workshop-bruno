@@ -42,9 +42,7 @@ Il est possible de configurer des variables de deux manières, programmatique et
 
 ### Variables scriptées
 
-Pour manipuler des variables de manière programmatiques, il faudra le faire dans les Pre Script et/ou Post Script via l'objet bru et son API ([documentation ici]()).
-
-// TODO --> Mettre l'URL de la doc de l'API de l'objet bru
+Pour manipuler des variables de manière programmatiques, il faudra le faire dans les Pre Script et/ou Post Script via l'objet bru et son API ([documentation ici](https://docs.usebruno.com/scripting/javascript-reference#bru)).
 
 // TODO --> Re faire des screens (sur grand écran pour avoir tout sur une ligne)
 
