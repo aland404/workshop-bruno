@@ -62,7 +62,7 @@ Heureusement leur hacking laisse des traces, et vous êtes capable d'identifier 
 
 Pour cela il faut vérifier que:
 - le statut http de la requête est différent de 666
-- le type de retour est un objet ou une liste
+- le type de retour est un objet ou une liste `(typeof value === 'object')`
 - qu'aucun des champs d'un objet ou d'une liste d'objet ne contient `Vive l'empire!` (peut importe la casse)
 - si un champ currentDate est renvoyé, il correspond à la date du jour au format dd/mm/yyy
 
@@ -78,7 +78,7 @@ Pour ce faire, faites un clic droit sur votre collection (ou clic sur les trois 
 
 ``` js
 test("Requête fiable: le statut http de la requête est différent de 666", function() {
-  expect(status).to.not.equal(666);
+  expect(res.status).to.not.equal(666);
 });
 ```
 
@@ -88,7 +88,7 @@ test("Requête fiable: le statut http de la requête est différent de 666", fun
 
 ``` js
 test("Requête fiable: le type de retour est un objet ou une liste", function() {
-  expect(typeof body === 'object').to.be.true
+  expect(typeof res.body === 'object').to.be.true
 });
 ```
 
@@ -129,24 +129,29 @@ function containsText(obj, text) {
 
 </Solution>
 
-<Solution title="le type de retour est un objet ou une liste">
+<Solution title="currentDate est la date est la date du jour">
 
 ``` js
 test("Requête fiable: la date est la date du jour", function() {
-  if (Array.isArray(body)) {
-      // Check each element in the array
-      body.forEach(item => {
-        if(item.currentDate){
-          expect(item.currentDate).to.equal(getCurrentDateFormatted());
-        }
-      });
-  } else {
-      // Check the body directly
-      if(body.currentDate){
-        expect(body.currentDate).to.equal(getCurrentDateFormatted());
-      }
+  const currentDate = getCurrentDateInBody()
+  if(currentDate){
+   expect(currentDate).to.equal(getCurrentDateFormatted())
   }
 });
+
+function getCurrentDateInBody() {
+  if (Array.isArray(res.body)) {
+      // Check each element in the array
+      res.body.forEach(item => {
+        if(item.currentDate) return item.currentDate
+      })
+  } else {
+      // Check the body directly
+      if(res.body.currentDate) return res.body.currentDate
+  }
+  
+  return undefined
+}
 
 function getCurrentDateFormatted() {
   const today = new Date()
@@ -194,7 +199,7 @@ bru run --env env_name # où env_name est le nom que vous avez donné à votre e
 
 // TODO: ajouter une image
 
-### Téléchargez une collection contenant des requêtes supplémentaire qui ne sont pas encore dans votre collection
+### Téléchargez une collection contenant des requêtes supplémentaires que vous n'avez pas encore
 
 ### Importez une collection qui contient des requêtes ainsi que des tests
 
