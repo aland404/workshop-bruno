@@ -1,0 +1,11 @@
+{
+  "name": "star-wars-api-bruno-collection",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "aland404",
+  "license": "MIT",
+  "private": true,
+  "dependencies": {
+    "dayjs": "^1.11.11"
+  }
+}

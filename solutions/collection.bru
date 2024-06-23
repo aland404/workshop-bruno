@@ -1,4 +1,7 @@
 tests {
+  // const moment = require("moment")
+  const dayjs = require("dayjs")
+  
   test("Requête fiable: le statut http de la requête est différent de 666", function() {
     expect(res.status).to.not.equal(666);
   });
@@ -17,12 +20,18 @@ tests {
   });
   
   function getCurrentDateFormatted() {
+    return dayjs().format('DD/MM/YYYY')
+    
+    // return moment().format('L')
+    
+    /**
     const today = new Date()
     const day = String(today.getDate()).padStart(2, '0')
     const month = String(today.getMonth() + 1).padStart(2, '0') // Les mois commencent à 0
     const year = today.getFullYear()
   
     return `${day}/${month}/${year}`
+    **/
   }
   
   function containsText(obj, text) {
@@ -34,7 +43,6 @@ tests {
       }
     } else if (typeof obj === 'object' && obj !== null) {
       for (let key in obj) {
-        console.log('Debug', key, obj)
         if (obj.hasOwnProperty(key)) {
           if (containsText(obj[key], text)) {
             return true;
