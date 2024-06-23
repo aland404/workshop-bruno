@@ -7,16 +7,18 @@
 
 ## Les variables d'environnement
 
-Aujourd'hui pour intéragir avec le système centralisé de gestion des personnages et des guerres de la galaxie nous utilisons une version accessible en locale.
+Aujourd'hui pour intéragir avec le système centralisé de gestion des personnages et des guerres de la galaxie nous utilisons une version de l'API accessible en locale.
 
-Imaginons que demain, la résistance décide que l'accès à ces ressources soient impossible en local et se fasse sur différents serveurs en fonction de l'étoile la plus proche à votre position. Il faudrait alors changer toutes les requêtes en mettant à jour nos URLs et ce à chaque fois que l'on changerait de position dans la galaxie.
+Imaginons que demain, la résistance décide que l'accès à ces ressources soient impossible en local et se fasse sur différents serveurs en fonction de l'étoile la plus proche à votre position. Il faudrait alors changer toutes les requêtes en mettant à jour vos URLs, et ce, à chaque fois que l'on changerait de position dans la galaxie.
 
 Pour palier à ce problème, et à n'importe quel problème de répétition d'informations identiques en fonction d'un contexte donné, il est possible de déclarer des variables d'environnement.
 
+<br/>
+
 #### Créer un nouvel environnement
 
-Cliquez en haut à droite de l'interface de Bruno sur le bouton "No environment", cliquez sur le bouton "Configure" puis sur "Create Environment".
-Renseignez un nom pour votre environnement, par exemple "Andor" pour une configuration correspondant à la planète Andor.
+Cliquez en haut à droite de l'interface de Bruno sur le bouton `No environment`, cliquez sur le bouton `Configure` puis sur `Create Environment`.
+Renseignez un nom pour votre environnement, par exemple `Andor` pour une configuration correspondant à la planète Andor.
 
 
 <img src="./assets/bruno_configure_env_menu.png" width="300" height="300">
@@ -24,15 +26,17 @@ Renseignez un nom pour votre environnement, par exemple "Andor" pour une configu
 
 Une nouvelle fenêtre s'ouvre, vous pouvez alors ajouter, supprimer et modifier des variables d'environnement.
 
-Ces variables sont, par défaut, visibles pour toutes les personnes ayant accès à la collection, mais vous pouvez définir comme "secrète" une variable sensible en cochant la checkbox correspondante. 
+Ces variables sont, par défaut, visibles pour toutes les personnes ayant accès à la collection, mais vous pouvez définir comme "secrète" une variable "sensible" en cochant la checkbox correspondante. 
 
 Ajouter des variables pour:
 - l'url de base (base_url) de vos appels
 - votre numéro de matricule
 - votre mot de passe (en tant que variable secrète)
-- tout ce que vous trouverez pertinant
+- tout ce que vous trouverez de pertinant si vous le souhaitez
 
-Prenez un instant pour examiner le fichier bru représentant votre environnement (<env_name>.bru)
+Prenez un instant pour examiner le fichier bru représentant votre environnement (`<env_name>.bru`)
+
+<br/>
 
 #### Utilisez vos variables d'environnement
 

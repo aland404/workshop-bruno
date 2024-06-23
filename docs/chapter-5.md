@@ -12,37 +12,37 @@ import BattleInfo from '../components/BattleInfo.vue';
 
 ## Pre Request scripts
 
-Dans Bruno, via l'onglet "Script", il est possible d'écrire des scripts JS qui s'exécuteront __avant__ l'appel de la requête.
+Dans Bruno, via l'onglet `Script`, il est possible d'écrire des scripts JS qui s'exécuteront __avant__ l'appel de la requête.
 
 Dans ce script, est accessible, l'objet ```req``` représentant la requête HTTP faite au server (headers, url, ...). Pour plus d'info, vous pouvez vous rendre sur la [documentation de l'objet Request](https://docs.usebruno.com/scripting/request/request-object).
 
 <img src="./assets/chapter-5/bruno_pre_request_script_console_log.png" width="250" height="250">
 <img src="./assets/chapter-5/bruno_pre_request_script_console_log_result.png" width="350" height="350">
 
-::: tip Pour ouvrir la console developpeur ℹ️
+::: tip Pour ouvrir la console developpeur dans Bruno ℹ️
 View > Toggle Developer Tools <img src="./assets/chapter-5/bruno_toggle_developer_tools.png" width="300" height="300">
 :::
 
-Il est également possible de configurer, lire et modifier des variables qui seront accessibles au niveau de la requête et de la collection, pratique pour préparer le body d'une requête.
+Il est également possible de configurer, lire et modifier des variables de "collection" qui seront accessibles au niveau de la requête et de la collection, pratique pour préparer le body d'une requête.
 
 ## Post Response scripts
 
-Dans Bruno, via l'onglet "Script", il est également possible d'écrire des scripts JS qui s'exécuteront __après__ l'appel de la requête.
+Dans Bruno, via l'onglet `Script`, il est également possible d'écrire des scripts JS qui s'exécuteront __après__ l'appel de la requête.
 
 Dans ce script, est accessible, l'objet ```res``` représentant la réponse de l'appel HTTP fait au server. Cet objet peut être utilisé pour lire les valeurs du corps, des entêtes et du statut de la réponse. Pour plus d'info, vous pouvez vous rendre sur la [documentation de l'objet Response](https://docs.usebruno.com/scripting/response/response-object).
 
 <img src="./assets/chapter-5/bruno_post_request_script_console_log.png" width="250" height="250">
 <img src="./assets/chapter-5/bruno_post_request_script_console_log_result.png" width="350" height="350">
 
-Il est également possible de configurer, lire et modifier des variables qui seront accessibles au niveau de la requête et de la collection, pratique pour sauvegarder le résultat ou partie d'une réponse pour une une autre requête de la collection.
+Il est également possible de configurer, lire et modifier des variables de "collection" qui seront accessibles au niveau de la requête et de la collection, pratique pour sauvegarder le résultat ou partie d'une réponse pour une une autre requête de la collection.
 
 ## Variables de collection
 
 Il est possible de configurer des variables de deux manières, programmatique et déclarative.
 
-### Variables scriptées
+### Variables programmatiques
 
-Pour manipuler des variables de manière programmatiques, il faudra le faire dans les Pre Script et/ou Post Script via l'objet bru et son API ([documentation ici](https://docs.usebruno.com/scripting/javascript-reference#bru)).
+Pour manipuler des variables de manière programmatiques, il faudra le faire dans les `Pre Script` et/ou `Post Script` via l'objet `bru` et son API ([documentation ici](https://docs.usebruno.com/scripting/javascript-reference#bru)).
 
 // TODO --> Re faire des screens (sur grand écran pour avoir tout sur une ligne)
 
@@ -55,7 +55,7 @@ Pour manipuler des variables de manière déclarative, il faudra le faire dans l
 
 <img src="./assets/chapter-5/bruno_set_vars_declaratively.png" width="450" height="450">
 
-Bruno attend une valeur dans Pre Request alors que dans la partie Post Response c'est une expression, où l'objet ```res``` est directement accessible.
+Bruno attend une valeur dans `Pre Request` alors que dans la partie `Post Response` c'est une expression, où l'objet ```res``` est directement accessible.
 
 <img src="./assets/chapter-5/bruno_set_vars_declaratively_result.png" width="450" height="450">
 
@@ -70,10 +70,11 @@ ___A vous de jouer!___
 - Stocker votre passeport galactique dans une variable galactic_passport
 - Ajoutez une requête pour faire progresser un des types de personnage
   - cette requête nécessite votre passeport galactique
-  - ce passeport est en réalité un Bearer Token 🤫, utilisez le pour vous identifier
-    - dans l'onglet ```Headers```
-    - ou dans l'onglet ```Auth``` en tant que ```Bearer Token```
-  - utiliser votre variable galactic_passport
+  - utilisez votre passport pour vous identifier, deux possibilités:
+    - dans l'onglet `Headers` > `Add Header` > Name: `Authorization` | Value: `Votre passeport`
+    - OU
+    - dans l'onglet `Auth` > `Bearer Token` > `Votre passeport` dans le champ token
+  - utilisez votre variable galactic_passport
 
 // TODO --> Clean des requêtes avec les console.log pour l'authent
 
@@ -89,7 +90,7 @@ Les solutions à ce chapitre sont dans les dossiers [solutions/chapter-5](https:
 
 ### Renforcer les rangs
 
-Lorsqu'un personnage de l'empire progresse, sa puissance augmente de 10, alors que la puissance d'un personnage de la rébellion n'augmentera que de 1 (la côté obscure est séduisant...).
+Lorsqu'un personnage de l'empire progresse, sa puissance augmente de 10, alors que la puissance d'un type personnage de la rébellion n'augmentera que de 1 (la côté obscure est séduisant...).
 
 ___Faites progresser les wookies pour gagner la bataille `Envahisseurs à Kashyyyk`___
 
