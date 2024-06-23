@@ -1,9 +1,12 @@
+<script setup>
+import Wars from '../components/Wars.vue';
+</script>
+
 # Chapitre 6 - Renforcement de la sécurité 🥋
 &nbsp;
 
 #### Objectif de la Mission 🎯
 - Découvrir les tests automatisés
-- Découvrir Bruno CLI
 - Préparer la victoire de la rébellion
 
 ## Tests automatisés
@@ -38,7 +41,7 @@ test("Intitulé de mon test, ce que je veux tester", function() {
 });
 ```
 
-Ajoutez l'exemple ci-dessus sur la requête de lecture de tous les personnages qui est censée renvoyée un statut http 200 (n'hésitez pas à modifier l'intitulé du test et supprimer les commentaires).
+Ajoutez l'exemple ci-dessus sur la requête de lecture de tous les types de personnages, qui est censée renvoyée un statut http 200 (n'hésitez pas à modifier l'intitulé du test et supprimer les commentaires).
 
 Si vous exécutez la requête, vous pourrez voir dans l'onglet `Tests` de la partie de droite le résultat de celui-ci (vert si réussi, rouge si échoué). 
 
@@ -63,14 +66,14 @@ Heureusement leur hacking laisse des traces, et vous êtes capable d'identifier 
 Pour cela il faut vérifier que:
 - le statut http de la requête est différent de 666
 - le type de retour est un objet ou une liste `(typeof value === 'object')`
-- qu'aucun des champs d'un objet ou d'une liste d'objet ne contient `Vive l'empire!` (peut importe la casse)
+- qu'aucun des champs d'un objet ou d'une liste d'objet ne contient `Vive l'empire!`, peut importe la casse (`JSON.stringify`)
 - si un champ currentDate est renvoyé, il correspond à la date du jour au format dd/mm/yyy
 
 Vous allez devoir ajouter ces vérifications pour toutes les requêtes de votre collection pour être sûr de vous.
 
 Cela peut s'avérer long et répétitif, surtout si vous avez beaucoup de requêtes. Et si jamais une nouvelle vérification devait se rajouter, il faudrait la rajouter sur chaque requête.
 
-Heureusement il est possible de définir des tests au niveau de la collection, tests qui seront exécutés avant chaque requête. Cependant il faudra nécessairement écrire des tests programatiques, ceci n'est pas possible avec les tests déclaratifs pour le moment.
+Heureusement il est possible de définir des tests au niveau de la collection, tests qui seront exécutés avant chaque requête. Cependant il faudra nécessairement écrire des tests programatiques, ceci n'est pas possible avec les tests déclaratifs.
 
 Pour ce faire, faites un clic droit sur votre collection (ou clic sur les trois petits points ...) et cliquez sur `Settings`. Vous devriez alors reconnaître l'onglet `Tests`que vous commencez à connaître. Ecrivez ici des tests pour valider les quatres points ci-dessus vous assurant de la fiabilité des requêtes. Ces tests necessitent un peu de code, vous pouvez copier coller le code qu'avait préparé un de vos camarades techniciens.
 
@@ -97,34 +100,11 @@ test("Requête fiable: le type de retour est un objet ou une liste", function() 
 <Solution title="aucun champ ne contient 'Vive l'empire!'">
 
 ``` js
-test("Requête fiable: aucun champ ne contient 'Vive l'empire!'", function() {
-  const searchText = "Vive l'empire!";
-  const result = containsText(res.body, searchText.toUpperCase());
-  expect(result).to.be.false
+test("Requête fiable: aucun champ ne contient 'Vive l'empire'", function() { 
+  const stringifiedBody = JSON.stringify(res.body).toUpperCase()
+  const searchText = "Vive l'empire!".toUpperCase()
+  expect(stringifiedBody.includes(searchText)).to.be.false
 });
-
-function containsText(obj, text) {
-  if (Array.isArray(obj)) {
-    for (let item of obj) {
-      if (containsText(item, text)) {
-        return true;
-      }
-    }
-  } else if (typeof obj === 'object' && obj !== null) {
-    for (let key in obj) {
-      if (obj.hasOwnProperty(key)) {
-        if (containsText(obj[key], text)) {
-          return true;
-        }
-      }
-    }
-  } else if (typeof obj === 'string') {
-    if (obj.toUpperCase().includes(text)) {
-      return true;
-    }
-  }
-  return false;
-}
 ```
 
 </Solution>
@@ -171,43 +151,59 @@ Vous pouvez également lancer un ensemble de requêtes d'un coup, les requêtes 
 
 Un onglet `Runner` s'ouvre alors avec l'ensemble des requêtes appelées et l'ensemble des tests exéctués pour chacune de ces requêtes.
 
-// TODO: ajouter une image
+<img src="./assets/chapter-6/bruno_result_test_execution.png" width="400" height="400">
 
-Nous allons maintenant voir comment exécuter ces requêtes avec la CLI Bruno.
+### Vérification des requêtes de l'API
 
-## Bruno CLI
+D'après la [documentation de l'API](http://localhost:3000/api#/), il y a quelques requêtes qui pourraient nous être utiles dans notre combat contre l'empire que vous n'avesz normalement pas encore ajouté dans votre collection.
 
-[Documentation de la CLI Bruno](https://docs.usebruno.com/bru-cli/overview)
+Un de vos collègues techniciens avait commencé le travail et exporté les requêtes manquantes dans une collection Bruno qu'il stocké sur le serveur privé de la rébellion.
 
-### Installation
+Téléchargez cette collection, importez là et exécutez toutes les requêtes pour ne gardez que les requêtes non corrompues par l'empire.
 
-```shell
-yarn global add @usebruno/cli
-#OR
-npm install -g @usebruno/cli
-#OR
-pnpm add -g @usebruno/cli
-```
+<br />
 
-### Executer une collection
+#### Télécharger la collection
 
-Naviguez jusqu'au dossier où se trouve votre collection d'API puis lancez la commande:
+Téléchargez la collection en cliquant 👉[ICI]() 👈
 
-```shell
-bru run --env env_name # où env_name est le nom que vous avez donné à votre environnement
-```
+<br />
 
-// TODO: ajouter une image
+#### Importer la collection
 
-### Téléchargez une collection contenant des requêtes supplémentaires que vous n'avez pas encore
+Cliquez sur les trois petits points en haut à gauche de Bruno, puis cliquez sur `Import Collection`, puis sélectionnez le type de collection `Bruno Collection` et allez sélectionné le fichier de la collection téléchargé précédemment.
 
-### Importez une collection qui contient des requêtes ainsi que des tests
+<img src="./assets/chapter-6/bruno_import_collection.png" width="200" height="200">
+<img src="./assets/chapter-6/bruno_import_bruno_collection.png" width="400" height="400">
 
-### Lancez les tests pour toute cette collection depuis l'interface ou la CLI
 
-### Supprimez celles corrompues par l'empire
+<br />
+<br />
+
+#### Executer les tests et ne gardez que les requêtes de confiance
+
+Clic droit sur la collection > `Run` > `Run collection`
+
+Supprimez les requêtes en erreur s'il y en a, ne conservez que celles qui valident toutes les vérifications.
+
+Vous pouvez rappatrier ces requêtes dans votre collection initiale si vous le souhaitez.
+Bruno ne permet pas de déplacer une requête d'une collection vers une autre.
+
+Cependant vous pouvez:
+* copier/coller le fichier au bon endroit sur votre ordinateur 
+* OU
+* faire un clic droit sur une des requêtes > Generate Code > Shell-curl > Copier le contenu, puis créer une nouvelle requête dans votre collection > From cURL
+
+Vous avez maintenant tout ce qu'il faut pour vous battre à armes égales contre l'empire.
 
 ### Allons gagner cette foutue guerre!
+
+<br/>
+<iframe src="https://giphy.com/embed/Ov5NiLVXT8JEc" width="480" height="269" style="" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/cats-light-sabers-Ov5NiLVXT8JEc">via GIPHY</a></p>
+
+Utilisez la puissance de l'API de la rebellion pour gagner toutes les batailles des guerres en cours dans la galaxie 💪
+
+<Wars />
 
 <Solution title="Besoin d'un coup de main ?">
 
