@@ -1,0 +1,22 @@
+meta {
+  name: Ajouter des jedis à la bataille V3
+  type: http
+  seq: 5
+}
+
+post {
+  url: {{base_url}}/star-wars/v3/wars/client-api-war/battles/conquest-for-the-death-star-1/add-people
+  body: json
+  auth: bearer
+}
+
+auth:bearer {
+  token: {{galactic_passport}}
+}
+
+body:json {
+  {
+    "peopleSlug": "jedi",
+    "numberToAdd": 2
+  }
+}

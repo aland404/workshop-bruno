@@ -1,0 +1,21 @@
+meta {
+  name: Kill storm trooper
+  type: http
+  seq: 8
+}
+
+delete {
+  url: {{base_url}}/star-wars/wars/client-api-war/battles/conquest-for-the-death-star-1/kill-people
+  body: json
+  auth: bearer
+}
+
+auth:bearer {
+  token: {{galactic_passport}}
+}
+
+body:json {
+  {
+    "peopleSlug": "storm_trooper"
+  }
+}
