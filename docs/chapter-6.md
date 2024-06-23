@@ -182,6 +182,8 @@ Cliquez sur les trois petits points en haut à gauche de Bruno, puis cliquez sur
 
 #### Executer les tests et ne gardez que les requêtes de confiance
 
+L'import/export d'une collection ne conserve pas les tests au niveau de la collection, il faudra donc faire un copier/coller des tests que vous avez déjà écrit dans cette nouvelle collection pour vous assurez de la conformité de celle-ci.
+
 Clic droit sur la collection > `Run` > `Run collection`
 
 Supprimez les requêtes en erreur s'il y en a, ne conservez que celles qui valident toutes les vérifications.
@@ -190,9 +192,9 @@ Vous pouvez rappatrier ces requêtes dans votre collection initiale si vous le s
 Bruno ne permet pas de déplacer une requête d'une collection vers une autre.
 
 Cependant vous pouvez:
-* copier/coller le fichier au bon endroit sur votre ordinateur 
-* OU
-* faire un clic droit sur une des requêtes > `Generate Code` > `Shell-curl` > Copier le contenu, puis créer une nouvelle requête dans votre collection > `From cURL`
+- copier/coller le fichier au bon endroit sur votre ordinateur 
+- OU
+- faire un clic droit sur une des requêtes > `Generate Code` > `Shell-curl` > Copier le contenu, puis créer une nouvelle requête dans votre collection > `From cURL`
 
 Vous avez maintenant tout ce qu'il faut pour vous battre à armes égales contre l'empire.
 
