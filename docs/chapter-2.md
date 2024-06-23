@@ -50,9 +50,20 @@ Vous devriez voir les logs suivants:
 
 [La documentation de l'API](http://localhost:3000/api#/) est maintenant accessible
 
+
+::: warning
+Attention, les données ne sont persistées que sur la session en cours.
+
+Donc à chaque fois que vous redémarrer votre serveur, elles reviendront à leur état initial.
+:::
+
 ## Installation de Bruno
 
 Deux possibilités pour installer Bruno.
+
+- Installation via des binaires
+
+Téléchargement sur le site [usebruno](https://www.usebruno.com/downloads)
 
 - Installation via un gestionnaire de paquets
 
@@ -80,10 +91,6 @@ choco install bruno
 scoop bucket add extras
 scoop install bruno
 ```
-
-- Installation via des binaires
-
-Téléchargement sur le site [usebruno](https://www.usebruno.com/downloads)
 
 ## Démarrage de Bruno
 

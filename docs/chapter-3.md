@@ -56,7 +56,7 @@ Une fenêtre représentant votre requête s'ouvre sur la partie droite.
 
 (_pensez à sauvegarder au fur et à mesure vos requêtes (ctrl + s ou cmd + s en fonction de votre OS)_)
 
-Éxecutez la requêtes en cliquant sur la flèche à droite de cette nouvelle fenêtre.
+Éxecutez la requête en cliquant sur la flèche à droite de cette nouvelle fenêtre.
 
 <img src="./assets/bruno_execute_request.png">
 
@@ -80,13 +80,13 @@ Pour plus d'information, consultez la [docummentation sur le Bru language](https
 
 #### Organisation par dossier et enrichissement de la collection
 
-Il est possible d'organiser ses collections à l'aide de dossiers, pour ceci faites un clic droit sur la collection et cliquez sur "Create folder", complétez le formulaire et cliquez sur "Create".
+Il est possible d'organiser ses collections à l'aide de dossiers, pour ceci faites un clic droit sur la collection et cliquez sur "New folder", complétez le formulaire et cliquez sur "Create".
 
-Créez quatre dossiers pour les requêtes concernant les personnages, les guerres, les batailles et le système d'authentification.
+Créez quatre dossiers pour les requêtes concernant les types de personnages, les guerres, les batailles et le système d'authentification.
 
 En vous aidant de [la documentation de l'API](http://localhost:3000/api#/) complétez les dossiers en créant de nouvelles requêtes
-- pour les personnages
-  - voir les personnages d'une faction
+- pour les types de personnages
+  - voir les type de personnages d'une faction
   - voir les informations d'un personnage
 - pour les guerres
   - voir les informations de toutes les guerres

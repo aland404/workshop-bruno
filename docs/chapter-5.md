@@ -23,7 +23,7 @@ Dans ce script, est accessible, l'objet ```req``` représentant la requête HTTP
 View > Toggle Developer Tools <img src="./assets/chapter-5/bruno_toggle_developer_tools.png" width="300" height="300">
 :::
 
-Il est également possible de configurer, lire et modifier des variables qui seront accessibles au niveau de la requêtes et de la collection, pratique pour préparer le body d'une requête.
+Il est également possible de configurer, lire et modifier des variables qui seront accessibles au niveau de la requête et de la collection, pratique pour préparer le body d'une requête.
 
 ## Post Response scripts
 
@@ -34,7 +34,7 @@ Dans ce script, est accessible, l'objet ```res``` représentant la réponse de l
 <img src="./assets/chapter-5/bruno_post_request_script_console_log.png" width="250" height="250">
 <img src="./assets/chapter-5/bruno_post_request_script_console_log_result.png" width="350" height="350">
 
-Il est également possible de configurer, lire et modifier des variables qui seront accessibles au niveau de la requêtes et de la collection, pratique pour sauvegarder le résultat ou partie d'une réponse pour une une autre requête de la collection.
+Il est également possible de configurer, lire et modifier des variables qui seront accessibles au niveau de la requête et de la collection, pratique pour sauvegarder le résultat ou partie d'une réponse pour une une autre requête de la collection.
 
 ## Variables de collection
 
