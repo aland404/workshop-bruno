@@ -26,13 +26,13 @@ Bruno offre la possibilité d'écrire des tests d'automatisation.
 
 ### Tests scriptés
 
-Bruno prend en charge l'écriture de scripts de tests d'automatisation en JavaScript pour vos requêtes API afin d'affirmer leurs comportements (onglet Tests).
+Bruno prend en charge l'écriture de scripts de tests d'automatisation en JavaScript pour vos requêtes API afin d'affirmer leurs comportements (onglet `Tests`).
 
 Bruno utilise la librairie d'assertion Chai ([documentation api](https://www.chaijs.com/api/bdd/)).
 
 L'écriture d'un test se fait comme ceci:
 ``` js
-// contenu de mon test
+// le test à exécuter
 test("Intitulé de mon test, ce que je veux tester", function() {
   // contenu de mon test
   const data = res.getBody();
@@ -49,7 +49,7 @@ Si vous exécutez la requête, vous pourrez voir dans l'onglet `Tests` de la par
 
 ### Tests déclaratifs
 
-Les assertions vous permettent d'écrire des tests de manière déclarative (onglet `Assert`). L'objet `res` est directement accessible dans les expressions à vérifier (ex: res.body, res.status, ...).
+Les assertions vous permettent d'écrire des tests de manière déclarative (onglet `Assert`). L'objet `res` est directement accessible dans les expressions à vérifier (ex: `res.body`, `res.status`, ...).
 
 Essayez de définir le même test que précédement mais de manière déclarative en rajoutant une expression dans l'onglet `Assert`.
 
@@ -61,21 +61,21 @@ Vous pouvez combiner les tests scriptés et déclaratifs. Les tests déclaratifs
 
 Les informateurs de la rébellion nous ont indiqué que l'empire était capable d'intercepter certains appels à l'API de la rébellion et de manipuler le retour de celles-ci. Il n'est donc plus possible de faire confiance à ces requêtes!
 
-Heureusement leur hacking laisse des traces, et vous êtes capable d'identifier ces requêtes.
+Heureusement, leur hacking laisse des traces, et vous êtes capable d'identifier ces requêtes.
 
 Pour cela il faut vérifier que:
 - le statut http de la requête est différent de 666
 - le type de retour est un objet ou une liste `(typeof value === 'object')`
-- qu'aucun des champs d'un objet ou d'une liste d'objet ne contient `Vive l'empire!`, peut importe la casse (`JSON.stringify`)
-- si un champ currentDate est renvoyé, il correspond à la date du jour au format dd/mm/yyy
+- qu'aucun des champs d'un objet ou d'une liste d'objet ne contient "Vive l'empire!", peut importe la casse (`JSON.stringify`)
+- si un champ currentDate est renvoyé, il correspond à la date du jour au format `dd/mm/yyyy
 
 Vous allez devoir ajouter ces vérifications pour toutes les requêtes de votre collection pour être sûr de vous.
 
 Cela peut s'avérer long et répétitif, surtout si vous avez beaucoup de requêtes. Et si jamais une nouvelle vérification devait se rajouter, il faudrait la rajouter sur chaque requête.
 
-Heureusement il est possible de définir des tests au niveau de la collection, tests qui seront exécutés avant chaque requête. Cependant il faudra nécessairement écrire des tests programatiques, ceci n'est pas possible avec les tests déclaratifs.
+Heureusement il est possible de définir des tests au niveau de la collection. Tests qui seront exécutés avant chaque requête. Cependant il faudra nécessairement écrire des tests programatiques, ceci n'est pas possible avec les tests déclaratifs.
 
-Pour ce faire, faites un clic droit sur votre collection (ou clic sur les trois petits points ...) et cliquez sur `Settings`. Vous devriez alors reconnaître l'onglet `Tests`que vous commencez à connaître. Ecrivez ici des tests pour valider les quatres points ci-dessus vous assurant de la fiabilité des requêtes. Ces tests necessitent un peu de code, vous pouvez copier coller le code qu'avait préparé un de vos camarades techniciens.
+Pour ce faire, faites un clic droit sur votre collection (ou clic sur les trois petits points ...) et cliquez sur `Settings`. Vous devriez alors reconnaître l'onglet `Tests`que vous commencez à connaître. Ecrivez ici des tests pour valider les quatres points ci-dessus vous assurant de la fiabilité des requêtes. Ces tests necessitent un peu de code, vous pouvez copier coller les bout de codes qu'avait préparé un de vos camarades techniciens.
 
 <Solution title="le statut http de la requête est différent de 666">
 
@@ -155,9 +155,9 @@ Un onglet `Runner` s'ouvre alors avec l'ensemble des requêtes appelées et l'en
 
 ### Vérification des requêtes de l'API
 
-D'après la [documentation de l'API](http://localhost:3000/api#/), il y a quelques requêtes qui pourraient nous être utiles dans notre combat contre l'empire que vous n'avesz normalement pas encore ajouté dans votre collection.
+D'après la [documentation de l'API](http://localhost:3000/api#/), il y a quelques requêtes qui pourraient nous être utiles dans notre combat contre l'empire que vous n'avez normalement pas encore ajouté dans votre collection.
 
-Un de vos collègues techniciens avait commencé le travail et exporté les requêtes manquantes dans une collection Bruno qu'il stocké sur le serveur privé de la rébellion.
+Un de vos collègues techniciens avait commencé le travail et exporté les requêtes manquantes dans une collection Bruno qu'il a stocké sur le serveur privé de la rébellion.
 
 Téléchargez cette collection, importez là et exécutez toutes les requêtes pour ne gardez que les requêtes non corrompues par l'empire.
 
@@ -165,13 +165,13 @@ Téléchargez cette collection, importez là et exécutez toutes les requêtes p
 
 #### Télécharger la collection
 
-Téléchargez la collection en cliquant 👉[ICI]() 👈
+Téléchargez la collection en cliquant 👉[ICI](https://github.com/aland404/workshop-bruno/blob/main/resources/chapter-6/additional-requests-collection.json) 👈
 
 <br />
 
 #### Importer la collection
 
-Cliquez sur les trois petits points en haut à gauche de Bruno, puis cliquez sur `Import Collection`, puis sélectionnez le type de collection `Bruno Collection` et allez sélectionné le fichier de la collection téléchargé précédemment.
+Cliquez sur les trois petits points en haut à gauche de Bruno, puis cliquez sur `Import Collection`, puis sélectionnez le type de collection `Bruno Collection` et allez sélectionner le fichier de la collection téléchargé précédemment.
 
 <img src="./assets/chapter-6/bruno_import_collection.png" width="200" height="200">
 <img src="./assets/chapter-6/bruno_import_bruno_collection.png" width="400" height="400">
@@ -192,7 +192,7 @@ Bruno ne permet pas de déplacer une requête d'une collection vers une autre.
 Cependant vous pouvez:
 * copier/coller le fichier au bon endroit sur votre ordinateur 
 * OU
-* faire un clic droit sur une des requêtes > Generate Code > Shell-curl > Copier le contenu, puis créer une nouvelle requête dans votre collection > From cURL
+* faire un clic droit sur une des requêtes > `Generate Code` > `Shell-curl` > Copier le contenu, puis créer une nouvelle requête dans votre collection > `From cURL`
 
 Vous avez maintenant tout ce qu'il faut pour vous battre à armes égales contre l'empire.
 

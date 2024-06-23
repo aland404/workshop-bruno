@@ -67,7 +67,7 @@ Order d'exécution: Vars Pre Request > Script Pre Request > Vars Post Response >
 
 ___A vous de jouer!___
 
-- Stocker votre passeport galactique dans une variable galactic_passport
+- Stocker votre passeport galactique dans une variable galactic_passport (`res.body.galacticPassport`)
 - Ajoutez une requête pour faire progresser un des types de personnage
   - cette requête nécessite votre passeport galactique
   - utilisez votre passport pour vous identifier, deux possibilités:
