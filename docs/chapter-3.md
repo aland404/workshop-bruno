@@ -14,7 +14,7 @@ import People from '../components/People.vue';
 
 Parcourez [la documentation de l'API](http://localhost:3000/api#/)
 
-Cette API permet manipuler les types de personnages des différentes factions (empire et rébellion).
+Cette API permet de manipuler les types de personnages des différentes factions (empire et rébellion).
 
 <People />
 
@@ -26,7 +26,7 @@ Elle permet également de consulter les différentes guerres et batailles qui se
 
 #### Première collection
 
-Commencez par créer une collection et des requêtes dans celle-ci.
+Commencez par créer une collection (regroupement de requêtes) et des requêtes dans celle-ci.
 
 Pour ceci cliquez sur les trois petits points (...) dans la partie supérieure droite du menu de gauche de Bruno, cliquez sur "Create Collection", complétez le formulaire (gardez en tête le chemin que vous choisirez pour sauvegarder votre collection, le champ `Location`) puis cliquez sur le bouton "Create".
 

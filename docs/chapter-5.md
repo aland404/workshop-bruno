@@ -100,7 +100,7 @@ ___Faites progresser les wookies pour gagner la bataille `Envahisseurs à Kashyy
 />
 
 ::: tip Info
-Renforcer les rangs de la résitance en cliquant de manière effrénée est plutôt répétitif, long et contraignant... 😕
+Renforcer les rangs de la résistance en cliquant de manière effrénée est plutôt répétitif, long et contraignant... 😕
 
 Il est possible d'exécuter en boucle les requêtes d'un dossier ou d'une collection depuis l'interface, cependant il faut posséder la version payante de Bruno. 
 :::

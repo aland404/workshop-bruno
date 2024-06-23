@@ -4,7 +4,7 @@ Bienvenue dans la mission secrète de la Résistance !
 
 Vous êtes le seul membre de l'équipe technique de la Résistance capable de les aider à vaincre l'Empire en utilisant l'API Star Wars.
 
-Vous utiliserez Bruno, un nouvel outil de la résistance, pour intéragir avec le système centralisé de gestion des personnages et des ressources de la résitance.
+Vous utiliserez Bruno, un nouvel outil de la résistance, pour intéragir avec le système centralisé de gestion des personnages et des ressources de la résistance.
 
 ## Objectif de la Mission 🎯
 
@@ -20,7 +20,7 @@ Vous aurez deux missions à mener à bien en parallèle:
     - Écrire des scripts et des tests
     - Écrire des tests automatisés pour valider l'API
   - BONUS
-    - Exécuter les tests dans une pipeline CI/CD pour empêcher que l'empire ne puisse à nouveau revenir
+    - Exécuter les tests dans une pipeline CI/CD pour empêcher l'empire de venir prendre sa revanche
     - Ajouter des librairies externes
 - Gagner la guerre contre l'empire ⚔️⭐
   - Connaitre vos ressources et les ressources de l'ennemi
@@ -38,9 +38,9 @@ Pour qu'une **"faction"** (l'empire ou la rébellion) gagne une guerre contre un
 
 Pour gagner une bataille, il faut que les forces de cette faction soient plus puissantes que les forces de la faction adverse pendant cette bataille.
 
-Chaque personnage est rattaché à une faction et possède une certaine force qui aide sa faction à remporter une bataille si celui-ci ou celle-ci est présente pendant la bataille.
+Chaque personnage est rattaché à une faction et possède une certaine force qui aide sa faction à remporter une bataille si celui-ci est présent pendant la bataille.
 
 Si la somme des forces d'une même faction est supérieure à la somme des forces de la faction adverse, alors la bataille est gagnée. Si les forces sont équivalentes, l'empire remporte la bataille.
 
-Il faudra donc gérer les type de personnages de la rébellion pour que les forces alliés soient suffisantes pour gagner suffisamment de batailles pour finalement gagner la guerre.
+Il faudra donc gérer les types de personnages de la rébellion pour que les forces alliées soient suffisantes pour gagner suffisamment de batailles pour finalement gagner la guerre.
 Attention, vos ressources sont limitées!

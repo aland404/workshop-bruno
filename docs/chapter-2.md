@@ -54,7 +54,7 @@ Vous devriez voir les logs suivants:
 ::: warning
 Attention, les données ne sont persistées que sur la session en cours.
 
-Donc à chaque fois que vous redémarrer votre serveur, elles reviendront à leur état initial.
+Donc à chaque fois que vous redémarrez votre serveur, elles reviendront à leur état initial.
 :::
 
 ## Installation de Bruno

@@ -7,7 +7,7 @@
 
 ## Les variables d'environnement
 
-Aujourd'hui pour intéragir avec le système centralisé de gestion des personnages et des ressources de la résitance nous utilisons une version accessible en locale.
+Aujourd'hui pour intéragir avec le système centralisé de gestion des personnages et des guerres de la galaxie nous utilisons une version accessible en locale.
 
 Imaginons que demain, la résistance décide que l'accès à ces ressources soient impossible en local et se fasse sur différents serveurs en fonction de l'étoile la plus proche à votre position. Il faudrait alors changer toutes les requêtes en mettant à jour nos URLs et ce à chaque fois que l'on changerait de position dans la galaxie.
 
