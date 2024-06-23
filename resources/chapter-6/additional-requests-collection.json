@@ -1,0 +1,224 @@
+{
+  "name": "star-wars-collection",
+  "version": "1",
+  "items": [
+    {
+      "type": "http",
+      "name": "Add wookies to battle V2",
+      "seq": 4,
+      "request": {
+        "url": "{{base_url}}/star-wars/v2/wars/client-api-war/battles/conquest-for-the-death-star-1/add-people",
+        "method": "POST",
+        "headers": [],
+        "body": {
+          "mode": "json",
+          "json": "{\n  \"peopleSlug\": \"wookie\",\n  \"numberToAdd\": 20\n}",
+          "formUrlEncoded": [],
+          "multipartForm": []
+        },
+        "script": {},
+        "vars": {},
+        "assertions": [],
+        "tests": "",
+        "auth": {
+          "mode": "bearer",
+          "bearer": {
+            "token": "{{galactic_passport}}"
+          }
+        },
+        "query": []
+      }
+    },
+    {
+      "type": "http",
+      "name": "Add wookies to battle V3",
+      "seq": 5,
+      "request": {
+        "url": "{{base_url}}/star-wars/v3/wars/client-api-war/battles/conquest-for-the-death-star-1/add-people",
+        "method": "POST",
+        "headers": [],
+        "body": {
+          "mode": "json",
+          "json": "{\n  \"peopleSlug\": \"wookie\",\n  \"numberToAdd\": 20\n}",
+          "formUrlEncoded": [],
+          "multipartForm": []
+        },
+        "script": {},
+        "vars": {},
+        "assertions": [],
+        "tests": "",
+        "auth": {
+          "mode": "bearer",
+          "bearer": {
+            "token": "{{galactic_passport}}"
+          }
+        },
+        "query": []
+      }
+    },
+    {
+      "type": "http",
+      "name": "Add wookies to battle V4",
+      "seq": 6,
+      "request": {
+        "url": "{{base_url}}/star-wars/v4/wars/client-api-war/battles/conquest-for-the-death-star-1/add-people",
+        "method": "POST",
+        "headers": [],
+        "body": {
+          "mode": "json",
+          "json": "{\n  \"peopleSlug\": \"wookie\",\n  \"numberToAdd\": 20\n}",
+          "formUrlEncoded": [],
+          "multipartForm": []
+        },
+        "script": {},
+        "vars": {},
+        "assertions": [],
+        "tests": "",
+        "auth": {
+          "mode": "bearer",
+          "bearer": {
+            "token": "{{galactic_passport}}"
+          }
+        },
+        "query": []
+      }
+    },
+    {
+      "type": "http",
+      "name": "Gagner toutes les guerres",
+      "seq": 4,
+      "request": {
+        "url": "{{base_url}}/star-wars/wars/win",
+        "method": "POST",
+        "headers": [],
+        "body": {
+          "mode": "none",
+          "formUrlEncoded": [],
+          "multipartForm": []
+        },
+        "script": {},
+        "vars": {},
+        "assertions": [],
+        "tests": "",
+        "auth": {
+          "mode": "none"
+        },
+        "query": []
+      }
+    },
+    {
+      "type": "http",
+      "name": "Gagner une guerre",
+      "seq": 5,
+      "request": {
+        "url": "{{base_url}}/star-wars/wars/client-api-war/win",
+        "method": "POST",
+        "headers": [],
+        "body": {
+          "mode": "none",
+          "formUrlEncoded": [],
+          "multipartForm": []
+        },
+        "script": {},
+        "vars": {},
+        "assertions": [],
+        "tests": "",
+        "auth": {
+          "mode": "none"
+        },
+        "query": []
+      }
+    },
+    {
+      "type": "http",
+      "name": "Kill storm trooper",
+      "seq": 8,
+      "request": {
+        "url": "{{base_url}}/star-wars/wars/client-api-war/battles/conquest-for-the-death-star-1/kill-people",
+        "method": "DELETE",
+        "headers": [],
+        "body": {
+          "mode": "json",
+          "json": "{\n  \"peopleSlug\": \"storm_trooper\"\n}",
+          "formUrlEncoded": [],
+          "multipartForm": []
+        },
+        "script": {},
+        "vars": {},
+        "assertions": [],
+        "tests": "",
+        "auth": {
+          "mode": "bearer",
+          "bearer": {
+            "token": "{{galactic_passport}}"
+          }
+        },
+        "query": []
+      }
+    },
+    {
+      "type": "http",
+      "name": "Win a battle",
+      "seq": 7,
+      "request": {
+        "url": "{{base_url}}/star-wars/wars/client-api-war/battles/conquest-for-the-death-star-1/win",
+        "method": "POST",
+        "headers": [],
+        "body": {
+          "mode": "json",
+          "json": "{\n  \"peopleSlug\": \"wookie\",\n  \"numberToAdd\": 20\n}",
+          "formUrlEncoded": [],
+          "multipartForm": []
+        },
+        "script": {},
+        "vars": {},
+        "assertions": [],
+        "tests": "",
+        "auth": {
+          "mode": "bearer",
+          "bearer": {
+            "token": "{{galactic_passport}}"
+          }
+        },
+        "query": []
+      }
+    }
+  ],
+  "environments": [
+    {
+      "variables": [
+        {
+          "name": "base_url",
+          "value": "http://localhost:3000",
+          "enabled": true,
+          "secret": false,
+          "type": "text"
+        },
+        {
+          "name": "registration_number",
+          "value": "7728398-9879870-8765007-42",
+          "enabled": true,
+          "secret": false,
+          "type": "text"
+        },
+        {
+          "name": "password",
+          "value": "",
+          "enabled": true,
+          "secret": true,
+          "type": "text"
+        }
+      ],
+      "name": "Andor"
+    }
+  ],
+  "brunoConfig": {
+    "version": "1",
+    "name": "star-wars-collection",
+    "type": "collection",
+    "ignore": [
+      "node_modules",
+      ".git"
+    ]
+  }
+}
