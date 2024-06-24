@@ -11,7 +11,7 @@ on:
     types: [ opened, synchronize, reopened ]
 
 env:
-  ENVIRONMENT: Andor
+  ENVIRONMENT: Tatooine
   PASSWORD: ${{ secrets.GALACTIC_PASSPORT_PASSWORD }}
 
 # Assign permissions for unit tests to be reported.
@@ -42,7 +42,7 @@ jobs:
         run: |
           cd solutions
           npm install
-          bru run chapter-7 -r --env Tatooine --output junit.xml --format junit --env-var password=${{ env.GALACTIC_PASSPORT_PASSWORD }}
+          bru run chapter-7 -r --env ${{ env.ENVIRONMENT }} --output junit.xml --format junit --env-var password=${{ env.PASSWORD }}
       - name: Publish Test Report
         uses: dorny/test-reporter@v1
         if: success() || failure()
