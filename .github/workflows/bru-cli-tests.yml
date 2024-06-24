@@ -1,0 +1,52 @@
+name: Bru CLI Tests
+
+on:
+  workflow_dispatch:
+    inputs:
+      build:
+        description: 'Bru CLI - Tests'
+        required: true
+        default: 'true'
+  pull_request:
+    types: [ opened, synchronize, reopened ]
+
+env:
+  ENVIRONMENT: Tatooine
+  PASSWORD: ${{ secrets.GALACTIC_PASSPORT_PASSWORD }}
+
+# Assign permissions for unit tests to be reported.
+# See https://github.com/dorny/test-reporter/issues/168
+permissions:
+  statuses: write
+  checks: write
+  contents: write
+  pull-requests: write
+  actions: write
+
+jobs:
+  test:
+    name: Bruno CLI - Tests
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - name: Install Bru CLI
+        run: npm install -g @usebruno/cli
+      - name: Display Bru CLI Version
+        run: bru --version
+      - name: Run tests
+        run: |
+          cd solutions
+          npm install
+          bru run chapter-7 -r --env ${{ env.ENVIRONMENT }} --output junit.xml --format junit --env-var password=${{ env.PASSWORD }}
+      - name: Publish Test Report
+        uses: dorny/test-reporter@v1
+        if: success() || failure()
+        with:
+          name: Test Report
+          path: solutions/junit.xml
+          reporter: java-junit

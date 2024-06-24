@@ -1,0 +1,34 @@
+meta {
+  name: Récupérer mon passport galactique
+  type: http
+  seq: 1
+}
+
+post {
+  url: {{base_url}}/star-wars/auth/galactic-passport
+  body: formUrlEncoded
+  auth: none
+}
+
+body:form-urlencoded {
+  registrationNumber: {{registration_number}}
+  password: {{password}}
+}
+
+vars:post-response {
+  galactic_passport: res.body.galacticPassport
+}
+
+script:pre-request {
+  // bru.setVar('laCleDeMaVariable', 'Valeur de ma variable')
+  
+  console.info('Valeur Pre Request:', bru.getVar('laCleDeMaVariable'))
+}
+
+script:post-response {
+  // bru.setVar('laCleDeMaVariable', 'Valeur de ma variable MAJ')
+  
+  // console.log('Valeur Post Response:', bru.getVar('laCleDeMaVariable'))
+  
+  console.info('Status HTTP dans Post Response:', bru.getVar('http_status'))
+}
