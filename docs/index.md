@@ -3,7 +3,7 @@ layout: home
 
 hero:
   name: "Bruno Resistance"
-  text: "A la découverte de Bruno, l'API client qui fait de la résistance"
+  text: "À la découverte de Bruno, l'API client qui fait de la résistance"
   tagline: Découverte pas à pas des fonctionnalités de Bruno
   actions:
     - theme: brand

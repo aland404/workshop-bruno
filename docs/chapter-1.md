@@ -6,11 +6,11 @@ Vous êtes le seul membre de l'équipe technique de la Résistance capable de le
 
 Vous utiliserez Bruno, un nouvel outil de la résistance, pour intéragir avec le système centralisé de gestion des personnages et des ressources de la résistance.
 
-## Objectif de la Mission 🎯
+## Objectifs de la Mission 🎯
 
-Vous aurez deux missions à mener à bien en parallèle:
+Vous aurez deux missions à mener à bien en parallèle :
 1. Découvrir les fonctionnalités de Bruno
-2. Utiliser les connaissances que vous emmagasinerez pour aider la résistance à gagner la guerre contre l'empire!
+2. Utiliser les connaissances que vous emmagasinerez pour aider la résistance à gagner la guerre contre l'empire !
 
 - Découvrir l'outil Bruno 🐶
     - Créer des collections et des requêtes
