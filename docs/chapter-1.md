@@ -20,7 +20,7 @@ Vous aurez deux missions à mener à bien en parallèle:
     - Écrire des scripts et des tests
     - Écrire des tests automatisés pour valider l'API
   - BONUS
-    - Exécuter les tests dans une pipeline CI/CD pour empêcher l'empire de venir prendre sa revanche
+    - Exécuter les tests dans une pipeline CI/CD
     - Ajouter des librairies externes
 - Gagner la guerre contre l'empire ⚔️⭐
   - Connaitre vos ressources et les ressources de l'ennemi
