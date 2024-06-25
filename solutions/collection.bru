@@ -8,10 +8,10 @@ tests {
   test("Requête fiable: le type de retour est un objet ou une liste", function() {
     expect(typeof res.body === 'object').to.be.true
   });
-  test("Requête fiable: aucun champ ne contient 'Vive l'empire'", function() {
-    const searchText = "Vive l'empire!";
-    const result = containsText(res.body, searchText.toUpperCase());
-    expect(result).to.be.false
+  test("Requête fiable: aucun champ ne contient 'Vive l'empire !'", function() {
+    const stringifiedBody = JSON.stringify(res.body).toUpperCase()
+    const searchText = "Vive l'empire !".toUpperCase()
+    expect(stringifiedBody.includes(searchText)).to.be.false
   });
   test("Requête fiable: la date est la date du jour", function() {
     if(res.body.currentDate) {
@@ -32,28 +32,5 @@ tests {
   
     return `${day}/${month}/${year}`
     **/
-  }
-  
-  function containsText(obj, text) {
-    if (Array.isArray(obj)) {
-      for (let item of obj) {
-        if (containsText(item, text)) {
-          return true;
-        }
-      }
-    } else if (typeof obj === 'object' && obj !== null) {
-      for (let key in obj) {
-        if (obj.hasOwnProperty(key)) {
-          if (containsText(obj[key], text)) {
-            return true;
-          }
-        }
-      }
-    } else if (typeof obj === 'string') {
-      if (obj.toUpperCase().includes(text)) {
-        return true;
-      }
-    }
-    return false;
   }
 }

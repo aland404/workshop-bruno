@@ -1,7 +1,7 @@
 # Chapitre 7 - Le pouvoir de la CI 🤖⚡️
 &nbsp;
 
-#### Objectif de la Mission 🎯
+#### Objectifs de la Mission 🎯
 - Découvrir Bruno CLI
 - Réussir l'intégration de Bruno dans une pipeline de delivery
 
@@ -58,44 +58,59 @@ Nous prendrons en exemple celle proposée par Github avec les Github Actions.
 
 Pour pouvoir réaliser cette partie, il est nécessaire d'avoir un compte Github.
 
+<br/> 
+
+#### Création d'un nouvel environnement
+
+Pour exécuter une collection, il faut avoir accès à l'API web que nous souhaitons tester
+- Github n'a pas accès à notre localhost
+- l'API doit être exposée sur le net
+
+Heureusement, un serveur distant est disponible :
+- Créez un nouvel environnement Bruno nommé `Tatooine` qui sera le même que votre précédent environnement
+- Valorisez la variable `base_url` avec `https://male-ofelia-caq-40-9e85a7e6.koyeb.app`
+
+<br/> 
+
 #### Création d'un repository Github
 
 Créez un repository sur votre compte Github et déposez-y le dossier représentant votre collection Bruno.
 
-#### Avant d'aller plus loin
+`Add file` > `Upload files`
 
-- pour exécuter une collection, il faut avoir accès à l'API web que nous souhaitons tester
-  - Github n'a pas accès à notre localhost
-  - l'API doit être exposée sur le net
-- les variables secrètes sont inaccessibles en dehors de l'interface graphique de Bruno
-  - il faut les transmettre explicitement en tant que variable d'environnement
+<br/> 
+
+#### Configuration des variables secrètes
+
+Les variables secrètes sont inaccessibles en dehors de l'interface graphique de Bruno
+  - il faut les transmettre explicitement en tant que variable d'environnement à la CLI
   - il ne faut pas que ces variables soient en clair dans nos fichiers
 
-Il va donc falloir créer une variable secrète dans Github:
+Il va donc falloir créer une variable secrète dans Github :
 
 - sur votre repository cliquez `Settings` > `Secrets and Variables` > `Actions` > `New Repository Secret`
-- appelez votre variable `GALACTIC_PASSPORT_PASSWORD`
+- nommez votre variable `GALACTIC_PASSPORT_PASSWORD`
 - valorisez-la avec le mot de passe utilisez pour appelez votre requête pour récupérer un passeport galactique
 
-Heureusement, un serveur distant est disponible:
-- Créez un environnement Bruno `Tatooine` qui sera le même que votre précédent environnement
-- Valorisez la variable `base_url` avec `https://male-ofelia-caq-40-9e85a7e6.koyeb.app`
+<br/> 
 
 #### Création d'une Github Actions
 
-Les workflows GitHub Actions sont définis dans des fichiers YAML stockés dans le répertoire .github/workflows d'un repository.
+Les workflows GitHub Actions sont définis dans des fichiers YAML, stockés dans le répertoire .github/workflows d'un repository.
 
-- Créez un répertoire .github/workflows à la racine de votre répository.
+- Créez un fichier `.github/workflows/bru-cli-tests.yml` à la racine de votre repository Github.
+  - `Add file` > `Create new file` > collez directement le nom `.github/workflows/bru-cli-tests.yml`
+  - OU
+  - cliquez sur l'onglet `Actions` > `set up a workflow yourself`
 
-- Ajoutez un fichier YAML pour votre workflow, par exemple `bru-cli-tests.yml`
-
-Copiez/collez le contenu suivant dans votre fichier yml
+Copiez/collez le contenu suivant dans votre fichier yml en prenant soin de remplacer les deux occurences `<<collection_folder_name>>` par le nom de votre dossier de votre collection
 
 <Solution title="Github action yml pour exécuter une collection Bruno">
 
 ```yaml
 name: Bru CLI Tests
 
+# Déclenche le workflow manuellement avec une entrée 'build'
 on:
   workflow_dispatch:
     inputs:
@@ -103,15 +118,19 @@ on:
         description: 'Bru CLI - Tests'
         required: true
         default: 'true'
+  # Déclenche le workflow sur un push vers la branche 'main'
+  push:
+    branches: [main]
+  # Déclenche le workflow sur les événements de pull request spécifiés
   pull_request:
     types: [ opened, synchronize, reopened ]
 
+# Définir les variables d'environnement globales
 env:
   ENVIRONMENT: Tatooine
   PASSWORD: ${{ secrets.GALACTIC_PASSPORT_PASSWORD }}
 
-# Assign permissions for unit tests to be reported.
-# See https://github.com/dorny/test-reporter/issues/168
+# Définir les permissions nécessaires pour les tests unitaires
 permissions:
   statuses: write
   checks: write
@@ -119,33 +138,46 @@ permissions:
   pull-requests: write
   actions: write
 
+# Définir le job de tests
 jobs:
   test:
     name: Bruno CLI - Tests
     runs-on: ubuntu-latest
+
     steps:
+      # Étape pour récupérer le code source du dépôt
       - name: Checkout
         uses: actions/checkout@v4
+
+      # Étape pour configurer Node.js
       - name: Setup Node
         uses: actions/setup-node@v4
         with:
           node-version: 20
+
+      # Étape pour installer Bru CLI globalement
       - name: Install Bru CLI
         run: npm install -g @usebruno/cli
+
+      # Étape pour afficher la version de Bru CLI installée
       - name: Display Bru CLI Version
         run: bru --version
+
+      # Étape pour exécuter les tests avec Bru CLI
       - name: Run tests
         run: |
-          cd solutions
-          npm install
+          cd <<collection_folder_name>> # Remplacez <<collection_folder_name>> par le nom du dossier de votre collection
           bru run --env ${{ env.ENVIRONMENT }} --output junit.xml --format junit --env-var password=${{ env.PASSWORD }}
+
+      # Étape pour publier le rapport de tests
       - name: Publish Test Report
         uses: dorny/test-reporter@v1
-        if: success() || failure()
+        if: success() || failure() # Exécuter cette étape si le job réussit ou échoue
         with:
           name: Test Report
-          path: solutions/junit.xml
+          path: <<collection_folder_name>>/junit.xml # Remplacez <<collection_folder_name>> par le nom du dossier de votre collection
           reporter: java-junit
+
 ```
 
 </Solution>

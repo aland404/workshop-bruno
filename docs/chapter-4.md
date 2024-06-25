@@ -17,21 +17,26 @@ Pour palier à ce problème, et à n'importe quel problème de répétition d'in
 
 #### Créer un nouvel environnement
 
-Cliquez en haut à droite de l'interface de Bruno sur le bouton `No environment`, cliquez sur le bouton `Configure` puis sur `Create Environment`.
+:::warning Évitez les espaces et caractères spéciaux dans le nommage de votre environnement
+:::
+
+Cliquez sur une des requêtes de votre collection > cliquez en haut à droite de l'interface de Bruno sur le bouton `No environment` > `Configure` > `Create Environment`.
 Renseignez un nom pour votre environnement, par exemple `Andor` pour une configuration correspondant à la planète Andor.
 
+<img src="./assets/chapter-4/bruno_configure_env_menu.png" width="300" height="300">
+<img src="./assets/chapter-4/bruno_configure_env_popup.png" width="300" height="300">
 
-<img src="./assets/bruno_configure_env_menu.png" width="300" height="300">
-<img src="./assets/bruno_configure_env_popup.png" width="300" height="300">
+Une nouvelle fenêtre s'ouvre, vous pouvez alors ajouter, supprimer et/ou modifier des variables d'environnement.
 
-Une nouvelle fenêtre s'ouvre, vous pouvez alors ajouter, supprimer et modifier des variables d'environnement.
+:::warning Évitez les espaces et caractères spéciaux dans le nommage de vos variables
+:::
 
 Ces variables sont, par défaut, visibles pour toutes les personnes ayant accès à la collection, mais vous pouvez définir comme "secrète" une variable "sensible" en cochant la checkbox correspondante. 
 
 Ajouter des variables pour:
-- l'url de base (base_url) de vos appels
-- votre numéro de matricule
-- votre mot de passe (en tant que variable secrète)
+- l'url de base de vos appels (`base_url`)
+- votre numéro de matricule (`registration_number`)
+- votre mot de passe (`password` en tant que variable secrète)
 - tout ce que vous trouverez de pertinant si vous le souhaitez
 
 Prenez un instant pour examiner le fichier bru représentant votre environnement (`<env_name>.bru`)
@@ -40,23 +45,26 @@ Prenez un instant pour examiner le fichier bru représentant votre environnement
 
 #### Utilisez vos variables d'environnement
 
-Une fois vos variables définies, vous pourrez les utiliser via la syntaxe moustache: &#123;&#123; base_url &#125;&#125;.
+Vous pouvez maintenant utiliser vos variables via la syntaxe moustache : &#123;&#123; base_url &#125;&#125;
+
 Utilisez vos variables dans vos requêtes.
 
 ##### Dans vos URLs:
 
-<img src="./assets/bruno_var_env_in_url.png">
+<img src="./assets/chapter-4/bruno_var_env_in_url.png">
+
+<br/>
+<br/>
 
 ##### Dans le payload de votre requête POST pour récupérer votre passeport galactique:
 
-::: warning Attention
-Pour que Bruno interprète des variables dans un body, il faut utiliser un body de type "Form URL Encoded"
+::: warning Pour que Bruno interprète des variables dans un body, il faut utiliser un body de type "Form URL Encoded"
 :::
 
-<img src="./assets/bruno_set_body_form_url_encoded.png" width="200" height="200">
-<img src="./assets/bruno_set_body_with_env_vars.png" width="400" height="400">
+<img src="./assets/chapter-4/bruno_set_body_form_url_encoded.png" width="200" height="200">
+<img src="./assets/chapter-4/bruno_set_body_with_env_vars.png" width="400" height="400">
 
-Prenez un instant pour examiner le fichier bru de votre requête pour récupérer votre passport galactique.
+Prenez un instant pour examiner le fichier `.bru` de votre requête sur votre ordinateur pour récupérer votre passport galactique.
 
 <Solution title="Besoin d'un coup de main ?">
 

@@ -4,6 +4,33 @@
   "items": [
     {
       "type": "http",
+      "name": "Add wookies to battle V1",
+      "seq": 3,
+      "request": {
+        "url": "{{base_url}}/star-wars/v1/wars/client-api-war/battles/conquest-for-the-death-star-1/add-people",
+        "method": "POST",
+        "headers": [],
+        "body": {
+          "mode": "json",
+          "json": "{\n  \"peopleSlug\": \"wookie\",\n  \"numberToAdd\": 2\n}",
+          "formUrlEncoded": [],
+          "multipartForm": []
+        },
+        "script": {},
+        "vars": {},
+        "assertions": [],
+        "tests": "",
+        "auth": {
+          "mode": "bearer",
+          "bearer": {
+            "token": "{{galactic_passport}}"
+          }
+        },
+        "query": []
+      }
+    },
+    {
+      "type": "http",
       "name": "Add wookies to battle V2",
       "seq": 4,
       "request": {
@@ -12,7 +39,7 @@
         "headers": [],
         "body": {
           "mode": "json",
-          "json": "{\n  \"peopleSlug\": \"wookie\",\n  \"numberToAdd\": 20\n}",
+          "json": "{\n  \"peopleSlug\": \"wookie\",\n  \"numberToAdd\": 2\n}",
           "formUrlEncoded": [],
           "multipartForm": []
         },
@@ -39,7 +66,7 @@
         "headers": [],
         "body": {
           "mode": "json",
-          "json": "{\n  \"peopleSlug\": \"wookie\",\n  \"numberToAdd\": 20\n}",
+          "json": "{\n  \"peopleSlug\": \"wookie\",\n  \"numberToAdd\": 2\n}",
           "formUrlEncoded": [],
           "multipartForm": []
         },
@@ -66,7 +93,7 @@
         "headers": [],
         "body": {
           "mode": "json",
-          "json": "{\n  \"peopleSlug\": \"wookie\",\n  \"numberToAdd\": 20\n}",
+          "json": "{\n  \"peopleSlug\": \"wookie\",\n  \"numberToAdd\": 2\n}",
           "formUrlEncoded": [],
           "multipartForm": []
         },
@@ -86,7 +113,7 @@
     {
       "type": "http",
       "name": "Gagner toutes les guerres",
-      "seq": 4,
+      "seq": 7,
       "request": {
         "url": "{{base_url}}/star-wars/wars/win",
         "method": "POST",
@@ -109,7 +136,7 @@
     {
       "type": "http",
       "name": "Gagner une guerre",
-      "seq": 5,
+      "seq": 8,
       "request": {
         "url": "{{base_url}}/star-wars/wars/client-api-war/win",
         "method": "POST",
@@ -132,7 +159,7 @@
     {
       "type": "http",
       "name": "Kill storm trooper",
-      "seq": 8,
+      "seq": 9,
       "request": {
         "url": "{{base_url}}/star-wars/wars/client-api-war/battles/conquest-for-the-death-star-1/kill-people",
         "method": "DELETE",
@@ -159,14 +186,14 @@
     {
       "type": "http",
       "name": "Win a battle",
-      "seq": 7,
+      "seq": 10,
       "request": {
         "url": "{{base_url}}/star-wars/wars/client-api-war/battles/conquest-for-the-death-star-1/win",
         "method": "POST",
         "headers": [],
         "body": {
           "mode": "json",
-          "json": "{\n  \"peopleSlug\": \"wookie\",\n  \"numberToAdd\": 20\n}",
+          "json": "{\n  \"peopleSlug\": \"wookie\",\n  \"numberToAdd\": 2\n}",
           "formUrlEncoded": [],
           "multipartForm": []
         },

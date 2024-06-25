@@ -1,7 +1,7 @@
 # Chapitre 2 - Configuration ⚙️
 &nbsp;
 
-#### Objectif de la Mission 🎯
+#### Objectifs de la Mission 🎯
 - Récupérer et démarrer l'API Star Wars
 - Installer l'outil Bruno
 
@@ -24,7 +24,7 @@ node -v # v16+
 git clone https://github.com/aland404/star-wars-api.git
 ```
 
-(_Si vous n'avez pas git d'installé vous pouvez également télécharger le dossier sur votre poste_)
+(_Si vous n'avez pas git d'installé vous pouvez également [télécharger le dossier](https://github.com/aland404/workshop-bruno/archive/refs/heads/main.zip) sur votre poste_)
 
 - Une fois le projet récupéré sur votre poste, mettez vous à la racine de celui-ci et installez les dépendances
 
@@ -46,7 +46,7 @@ yarn run start
 
 Vous devriez voir les logs suivants:
 
-![Server started successfully](./assets/server_starts_with_success.png)
+<img src="./assets/chapter-2/server_starts_with_success.png">
 
 [La documentation de l'API](http://localhost:3000/api#/) est maintenant accessible
 
@@ -61,7 +61,7 @@ Donc à chaque fois que vous redémarrez votre serveur, elles reviendront à leu
 
 Deux possibilités pour installer Bruno.
 
-- Installation via des binaires
+- Installation classique
 
 Téléchargement sur le site [usebruno](https://www.usebruno.com/downloads)
 
@@ -98,4 +98,4 @@ Démarrez l'application Bruno
 
 Vous devriez voir la page d'accueil de Bruno:
 
-![Bruno home page](./assets/bruno_home_page.png)
+<img src="./assets/chapter-2/bruno_home_page.png">

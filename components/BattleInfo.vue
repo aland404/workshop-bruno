@@ -35,14 +35,14 @@ onMounted(() => {
 <template>
   <div v-if="loading" class="loader-container"><span class="loader"></span></div>
   <div v-else-if="battle" :class="displayAlone && 'block'">
-    <b>Bataille: {{ battle.name }}</b>
-    <div class="winner">--> Gagnant: {{ battle.winner.faction }} - Puissance: {{ battle.winner.totalPower }}</div>
-    <div class="loser">--> Perdant: {{ battle.loser.faction }} - Puissance: {{ battle.loser.totalPower }}</div>
+    <b>Bataille : {{ battle.name }}</b>
+    <div class="winner">--> Gagnant : {{ battle.winner.faction }} - Puissance: {{ battle.winner.totalPower }}</div>
+    <div class="loser">--> Perdant : {{ battle.loser.faction }} - Puissance: {{ battle.loser.totalPower }}</div>
 
     <div v-if="displayAlone">
         <br/>
         <div v-if="battle.loser.faction === 'rebellion'" class="loser">Vous perdez cette bataille... 😢</div>
-        <div v-else class="winner">Vous gagnez cette bataille! 💪</div>
+        <div v-else class="winner">Vous gagnez cette bataille ! 💪</div>
         <div class="button-container">
           <input type="button" class="button" @click="fetchBattleSummary" value="Rafraichir les données" :disabled="loading" />
         </div>
@@ -62,7 +62,7 @@ onMounted(() => {
   padding-left: 1rem;
 }
 .winner {
-  color: lightgreen;
+  color: #2ba42b;
   padding-left: 1rem;
 }
 

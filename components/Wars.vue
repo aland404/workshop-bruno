@@ -55,7 +55,7 @@ onMounted(() => {
     <div v-if="loading" class="loader-container"><span class="loader"></span></div>
     <div v-else-if="!fetchHasFailed">
       <div v-for="war in warsInfo.wars" :key="`war-${war.name}`">
-        <b>Guerre: "{{war.name}}"</b>
+        <b>Guerre : "{{war.name}}"</b>
         <ul v-for="battle in war.battles" :key="`battle-${battle.name}`">
           <BattleInfo :war-slug="war.slug" :battle-slug="battle.slug" />
         </ul>
@@ -67,7 +67,7 @@ onMounted(() => {
     <div v-if="isRebellionWinning" id="rebellion-wins-message">
       <div>👏 BRAVO 👏</div>
       <div>VOUS AVEZ PERMIS A LA REBELLION DE GAGNER</div>
-      <div>LA GUERRE CONTRE l'EMPIRE!</div>
+      <div>LA GUERRE CONTRE l'EMPIRE !</div>
     </div>
     <div class="button-container">
       <input type="button" class="button" @click="fetchWars" value="Rafraichir les données" :disabled="loading" />

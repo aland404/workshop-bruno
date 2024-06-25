@@ -24,6 +24,6 @@ defineProps({
   color: lightcoral;
 }
 .rebellion {
-  color: lightgreen;
+  color: #2ba42b;
 }
 </style>

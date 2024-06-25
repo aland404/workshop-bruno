@@ -5,7 +5,7 @@ import Wars from '../components/Wars.vue';
 # Chapitre 6 - Renforcement de la sécurité 🥋
 &nbsp;
 
-#### Objectif de la Mission 🎯
+#### Objectifs de la Mission 🎯
 - Découvrir les tests automatisés
 - Préparer la victoire de la rébellion
 
@@ -30,11 +30,11 @@ Bruno prend en charge l'écriture de scripts de tests d'automatisation en JavaSc
 
 Bruno utilise la librairie d'assertion Chai ([documentation api](https://www.chaijs.com/api/bdd/)).
 
-L'écriture d'un test se fait comme ceci:
+L'écriture d'un test se fait de la façon suivante :
 ``` js
 // le test à exécuter
 test("Intitulé de mon test, ce que je veux tester", function() {
-  // contenu de mon test
+  //// contenu du test ////
   const data = res.getBody();
   // ce que je veux vérifier, ce à quoi je m'attends
   expect(res.getStatus()).to.equal(200);
@@ -57,16 +57,16 @@ Si vous exécutez la requête, vous pourrez voir dans l'onglet `Tests` de la par
 
 Vous pouvez combiner les tests scriptés et déclaratifs. Les tests déclaratifs devraient couvrir la plupart de vos besoins en matière de tests mais pour les tests complexes, vous pouvez écrire des tests scriptés.
 
-### __On nous a hacké! 🚨__
+### __On nous a hacké ! 🚨__
 
-Les informateurs de la rébellion nous ont indiqué que l'empire était capable d'intercepter certains appels à l'API de la rébellion et de manipuler le retour de celles-ci. Il n'est donc plus possible de faire confiance à ces requêtes!
+Les informateurs de la rébellion nous ont indiqué que l'empire était capable d'intercepter certains appels à l'API de la rébellion et de manipuler le retour de celles-ci. Il n'est donc plus possible de faire confiance à ces requêtes !
 
 Heureusement, leur hacking laisse des traces, et vous êtes capable d'identifier ces requêtes.
 
 Pour cela il faut vérifier que:
-- le statut http de la requête est différent de 666
+- le statut http de la requête est différent de 666 (`res.status`)
 - le type de retour est un objet ou une liste `(typeof value === 'object')`
-- qu'aucun des champs d'un objet ou d'une liste d'objet ne contient "Vive l'empire!", peut importe la casse (`JSON.stringify`)
+- qu'aucun des champs d'un objet ou d'une liste d'objet ne contient "Vive l'empire !", peut importe la casse (`JSON.stringify`)
 - si un champ currentDate est renvoyé, il correspond à la date du jour au format `dd/mm/yyyy
 
 Vous allez devoir ajouter ces vérifications pour toutes les requêtes de votre collection pour être sûr de vous.
@@ -97,12 +97,12 @@ test("Requête fiable: le type de retour est un objet ou une liste", function() 
 
 </Solution>
 
-<Solution title="aucun champ ne contient 'Vive l'empire!'">
+<Solution title="aucun champ ne contient 'Vive l'empire !'">
 
 ``` js
-test("Requête fiable: aucun champ ne contient 'Vive l'empire'", function() { 
+test("Requête fiable: aucun champ ne contient 'Vive l'empire !'", function() { 
   const stringifiedBody = JSON.stringify(res.body).toUpperCase()
-  const searchText = "Vive l'empire!".toUpperCase()
+  const searchText = "Vive l'empire !".toUpperCase()
   expect(stringifiedBody.includes(searchText)).to.be.false
 });
 ```
@@ -147,7 +147,7 @@ function getCurrentDateFormatted() {
 
 Maintenant si vous executez une requête de votre collection, celle-ci lancera tous ces tests.
 
-Vous pouvez également lancer un ensemble de requêtes d'un coup, les requêtes d'un dossier ou d'une collection via un clic droit (ou les trois petits points...), puis `Run`, puis `Recursive run`.
+Vous pouvez également lancer un ensemble de requêtes d'un seul coup (les requêtes d'un dossier ou d'une collection) via un clic droit (ou les trois petits points ...) > `Run` > `Recursive run`.
 
 Un onglet `Runner` s'ouvre alors avec l'ensemble des requêtes appelées et l'ensemble des tests exéctués pour chacune de ces requêtes.
 
@@ -159,19 +159,17 @@ D'après la [documentation de l'API](http://localhost:3000/api#/), il y a quelqu
 
 Un de vos collègues techniciens avait commencé le travail et exporté les requêtes manquantes dans une collection Bruno qu'il a stocké sur le serveur privé de la rébellion.
 
-Téléchargez cette collection, importez là et exécutez toutes les requêtes pour ne gardez que les requêtes non corrompues par l'empire.
-
 <br />
 
 #### Télécharger la collection
 
-Téléchargez la collection en cliquant 👉[ICI](https://github.com/aland404/workshop-bruno/blob/main/resources/chapter-6/additional-requests-collection.json) 👈
+Téléchargez la collection en cliquant [ICI](https://github.com/aland404/workshop-bruno/blob/main/resources/chapter-6/additional-requests-collection.json) > cliquez sur les trois petits points (...) en haut à droite > `Download`
 
 <br />
 
 #### Importer la collection
 
-Cliquez sur les trois petits points en haut à gauche de Bruno, puis cliquez sur `Import Collection`, puis sélectionnez le type de collection `Bruno Collection` et allez sélectionner le fichier de la collection téléchargé précédemment.
+Cliquez sur les trois petits points en haut à gauche de Bruno > cliquez sur `Import Collection` > sélectionnez le type de collection `Bruno Collection` > sélectionnez le fichier de la collection téléchargée précédemment.
 
 <img src="./assets/chapter-6/bruno_import_collection.png" width="200" height="200">
 <img src="./assets/chapter-6/bruno_import_bruno_collection.png" width="400" height="400">
@@ -184,21 +182,24 @@ Cliquez sur les trois petits points en haut à gauche de Bruno, puis cliquez sur
 
 L'import/export d'une collection ne conserve pas les tests au niveau de la collection, il faudra donc faire un copier/coller des tests que vous avez déjà écrit dans cette nouvelle collection pour vous assurez de la conformité de celle-ci.
 
+:::warning Penser à sélectionner un environnement sur cette collection avant de l'exécuter
+:::
+
 Clic droit sur la collection > `Run` > `Run collection`
 
 Supprimez les requêtes en erreur s'il y en a, ne conservez que celles qui valident toutes les vérifications.
 
 Vous pouvez rappatrier ces requêtes dans votre collection initiale si vous le souhaitez.
 Bruno ne permet pas de déplacer une requête d'une collection vers une autre.
-
 Cependant vous pouvez:
-- copier/coller le fichier au bon endroit sur votre ordinateur 
+- copier/coller le fichier `.bru` d'une requête de votre ordinateur 
 - OU
-- faire un clic droit sur une des requêtes > `Generate Code` > `Shell-curl` > Copier le contenu, puis créer une nouvelle requête dans votre collection > `From cURL`
+- faire un clic droit sur une des requêtes > `Generate Code` > `Shell-curl` > copier le contenu, puis créer une nouvelle requête dans votre collection > `From cURL`
+  - ⚠️ cette façon de faire peut être non fonctionnelle en fonction de la version de Bruno
 
 Vous avez maintenant tout ce qu'il faut pour vous battre à armes égales contre l'empire.
 
-### Allons gagner cette foutue guerre!
+### Allons gagner cette foutue guerre !
 
 <br/>
 <iframe src="https://giphy.com/embed/Ov5NiLVXT8JEc" width="480" height="269" style="" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/cats-light-sabers-Ov5NiLVXT8JEc">via GIPHY</a></p>

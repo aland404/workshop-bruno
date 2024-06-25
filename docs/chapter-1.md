@@ -43,4 +43,3 @@ Chaque personnage est rattaché à une faction et possède une certaine force qu
 Si la somme des forces d'une même faction est supérieure à la somme des forces de la faction adverse, alors la bataille est gagnée. Si les forces sont équivalentes, l'empire remporte la bataille.
 
 Il faudra donc gérer les types de personnages de la rébellion pour que les forces alliées soient suffisantes pour gagner suffisamment de batailles pour finalement gagner la guerre.
-Attention, vos ressources sont limitées!

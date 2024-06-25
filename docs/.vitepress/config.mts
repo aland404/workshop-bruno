@@ -2,7 +2,7 @@ import { defineConfig } from 'vitepress'
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
-  title: "Bruno Resistance",
+  title: "Bruno fait de la résistance",
   description: "A la découverte de Bruno, l'API client qui fait de la résistance",
   lang: 'fr-FR',
   base: '/workshop-bruno',
@@ -19,7 +19,7 @@ export default defineConfig({
 
     sidebar: [
       {
-        text: 'Examples',
+        text: 'Sommaire',
         items: [
           { text: 'Chapitre 1 - briefing 📜', link: '/chapter-1' },
           { text: 'Chapitre 2 - configuration ⚙️', link: '/chapter-2' },

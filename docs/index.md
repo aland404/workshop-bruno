@@ -2,9 +2,9 @@
 layout: home
 
 hero:
-  name: "Bruno Resistance"
-  text: "À la découverte de Bruno, l'API client qui fait de la résistance"
-  tagline: Découverte pas à pas des fonctionnalités de Bruno
+  name: "Workshop Bruno"
+  text: "À la découverte de Bruno, le client d'API qui fait de la résistance"
+  tagline: Venez sauvez la galaxie de la menace de l'empire avec Bruno et découvrir pas à pas ses fonctionnalités.
   actions:
     - theme: brand
       text: S'engager dans la résistance 🤝
