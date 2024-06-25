@@ -6,7 +6,7 @@ import People from '../components/People.vue';
 # Chapitre 3 - Exploration 🛰
 &nbsp;
 
-#### Objectif de la Mission 🎯
+#### Objectifs de la Mission 🎯
 - Découvrir l'API Star Wars
 - Découvrir de l'outil Bruno
 
@@ -18,7 +18,7 @@ Cette API permet de manipuler les types de personnages des différentes factions
 
 <People />
 
-Elle permet également de consulter les différentes guerres et batailles qui se déroule en ce moment même dans la galaxie.
+Elle permet également de consulter les différentes guerres et batailles qui se déroulent en ce moment même dans la galaxie.
 
 <Wars />
 
@@ -45,7 +45,7 @@ C'est pour cela que lorsque vous allez créer une collection, Bruno vous demande
 
 #### Première requête
 
-Une fois la collection prête, créez une requête pour lire les information des personnages de la galaxie en requêtant l'api `GET`: http://localhost:3000/star-wars/people
+Une fois la collection prête, créez une requête pour lire les informations des personnages de la galaxie en requêtant l'api `GET`: http://localhost:3000/star-wars/people
 
 Pour se faire, faites un clic droit sur le nom de votre collection ou cliquez sur les trois petits points (...) à droite du nom de celle-ci, cliquez sur `New Request`, complétez le formulaire puis cliquez sur le bouton "Create".
 
@@ -68,7 +68,7 @@ Bruno utilise le langage Bru pour enregistrer les détails d'une requête API da
 
 C'est un langage de balisage simple avec une sémantique de type JSON.
 
-Ouvrez le fichier sur votre ordinateur représentant la requête que vous venez de créer. Il se trouve là où vous avec choisi de sauvegarder votre collection.
+Ouvrez le fichier sur votre ordinateur représentant la requête que vous venez de créer. Il se trouve à l'emplacement où vous avec choisi de sauvegarder votre collection.
 
 Il devrait ressembler à ceci:
 
@@ -131,4 +131,4 @@ Les solutions à ce chapitre sont dans le dossier [solutions/chapter-3](https://
 
 </Solution>
 
-À ce stade, vous avez déjà une collection bien remplie, il va maintenant falloir aller plus loin grâce à la gestion des variables d'environnements et des secrets.
+À ce stade, vous avez déjà une collection bien remplie, il va maintenant falloir aller plus loin grâce à la gestion des variables d'environnement et des secrets.

@@ -1,7 +1,7 @@
 # Chapitre 4 - La force des variables 💪
 &nbsp;
 
-#### Objectif de la Mission 🎯
+#### Objectifs de la Mission 🎯
 - Découvrir les variables d'environnement
 - Découvrir la gestion des secrets
 
@@ -9,7 +9,7 @@
 
 Aujourd'hui pour intéragir avec le système centralisé de gestion des personnages et des guerres de la galaxie nous utilisons une version de l'API accessible en locale.
 
-Imaginons que demain, la résistance décide que l'accès à ces ressources soient impossible en local et se fasse sur différents serveurs en fonction de l'étoile la plus proche à votre position. Il faudrait alors changer toutes les requêtes en mettant à jour vos URLs, et ce, à chaque fois que l'on changerait de position dans la galaxie.
+Imaginons que demain, la résistance décide que l'accès à ces ressources soit impossible en local et se fasse sur différents serveurs en fonction de l'étoile la plus proche à votre position. Il faudrait alors changer toutes les requêtes en mettant à jour vos URLs, et ce, à chaque fois que l'on changerait de position dans la galaxie.
 
 Pour palier à ce problème, et à n'importe quel problème de répétition d'informations identiques en fonction d'un contexte donné, il est possible de déclarer des variables d'environnement.
 
