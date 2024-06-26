@@ -28,7 +28,7 @@ node -v # v16+
 git clone https://github.com/aland404/star-wars-api.git
 ```
 
-(_Si vous n'avez pas git d'installé vous pouvez également [télécharger le dossier](https://github.com/aland404/workshop-bruno/archive/refs/heads/main.zip) sur votre poste_)
+(_Si vous n'avez pas git d'installé vous pouvez également [télécharger le dossier](https://github.com/aland404/star-wars-api/archive/refs/heads/main.zip) sur votre poste_)
 
 - Une fois le projet récupéré sur votre poste, mettez vous à la racine de celui-ci et installez les dépendances
 
