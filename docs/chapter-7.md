@@ -28,7 +28,8 @@ Naviguez jusqu'au dossier où se trouve votre collection d'API Bruno puis lancez
 ```shell
 # env_name est le nom que vous avez donné à votre environnement
 # your_password est le mot de passe utilisé pour récupérer votre passport galactique
-bru run --env env_name --env-var password=your_password
+# bru run --env <<env_name>> --env-var password=<<your_password>>
+bru run --env Andor --env-var password=onlyYouCanSaveTheGalaxy
 ```
 
 ::: warning
@@ -90,7 +91,7 @@ Il va donc falloir créer une variable secrète dans Github :
 
 - sur votre repository cliquez `Settings` > `Secrets and Variables` > `Actions` > `New Repository Secret`
 - nommez votre variable `GALACTIC_PASSPORT_PASSWORD`
-- valorisez-la avec le mot de passe utilisez pour appelez votre requête pour récupérer un passeport galactique
+- valorisez-la avec le mot de passe utilisez pour récupérer votre passeport galactique
 
 <br/> 
 
@@ -103,7 +104,7 @@ Les workflows GitHub Actions sont définis dans des fichiers YAML, stockés dans
   - OU
   - cliquez sur l'onglet `Actions` > `set up a workflow yourself`
 
-Copiez/collez le contenu suivant dans votre fichier yml en prenant soin de remplacer les deux occurences `<<collection_folder_name>>` par le nom de votre dossier de votre collection
+Copiez/collez le contenu suivant dans votre fichier yml en prenant soin de remplacer les deux occurences `<<collection_folder_name>>` par le nom du dossier de votre collection
 
 <Solution title="Github action yml pour exécuter une collection Bruno">
 
@@ -184,7 +185,7 @@ jobs:
 
 Cette Github Actions s'exécute à chaque commit sur main ou sur une pull request et peut également être déclenchée manuellement.
 
-Vous devriez voir le résultat de votre Github Actions dans l'onglet `Actions` de votre repository.
+Vous devriez voir le résultat de votre Github Actions dans l'onglet `Actions` de votre repository. Cliquez sur le dernier `workflow` exécuté.
 
 <img src="./assets/chapter-7/github_actions_bruno_cli_workflow.png">
 

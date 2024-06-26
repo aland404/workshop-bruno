@@ -7,9 +7,10 @@
 
 ## Les variables d'environnement
 
-Aujourd'hui pour intéragir avec le système centralisé de gestion des personnages et des guerres de la galaxie nous utilisons une version de l'API accessible en locale.
+Aujourd'hui pour intéragir avec le système centralisé de gestion des types de personnages et des guerres de la galaxie nous utilisons une version de l'API accessible en locale.
 
-Imaginons que demain, la résistance décide que l'accès à ces ressources soit impossible en local et se fasse sur différents serveurs en fonction de l'étoile la plus proche à votre position. Il faudrait alors changer toutes les requêtes en mettant à jour vos URLs, et ce, à chaque fois que l'on changerait de position dans la galaxie.
+Imaginons que demain, la résistance décide que l'accès à ces ressources soit impossible en local et se fasse sur différents serveurs en fonction de l'étoile la plus proche de votre position.
+Il faudrait alors changer toutes les requêtes en mettant à jour vos URLs, et ce, à chaque fois que vous changerez de position dans la galaxie.
 
 Pour palier à ce problème, et à n'importe quel problème de répétition d'informations identiques en fonction d'un contexte donné, il est possible de déclarer des variables d'environnement.
 
@@ -39,19 +40,22 @@ Ajouter des variables pour:
 - votre mot de passe (`password` en tant que variable secrète)
 - tout ce que vous trouverez de pertinant si vous le souhaitez
 
-Prenez un instant pour examiner le fichier bru représentant votre environnement (`<env_name>.bru`)
+Prenez un instant pour examiner le fichier .bru représentant votre environnement sur votre ordinateur (`environments/<env_name>.bru`)
 
 <br/>
 
 #### Utilisez vos variables d'environnement
 
-Vous pouvez maintenant utiliser vos variables via la syntaxe moustache : &#123;&#123; base_url &#125;&#125;
+Vous pouvez maintenant utiliser vos variables via la syntaxe moustache : &#123;&#123;base_url&#125;&#125;
 
-Utilisez vos variables dans vos requêtes.
+Utilisez vos variables dans toutes vos requêtes.
 
-##### Dans vos URLs:
+##### Dans toutes vos URLs:
 
 <img src="./assets/chapter-4/bruno_var_env_in_url.png">
+
+::: warning Pensez à sauvegarder vos requêtes au fur et à mesure
+:::
 
 <br/>
 <br/>
@@ -64,7 +68,7 @@ Utilisez vos variables dans vos requêtes.
 <img src="./assets/chapter-4/bruno_set_body_form_url_encoded.png" width="200" height="200">
 <img src="./assets/chapter-4/bruno_set_body_with_env_vars.png" width="400" height="400">
 
-Prenez un instant pour examiner le fichier `.bru` de votre requête sur votre ordinateur pour récupérer votre passport galactique.
+Prenez un instant pour examiner le fichier `.bru` de votre requête pour récupérer votre passport galactique, sur votre ordinateur.
 
 <Solution title="Besoin d'un coup de main ?">
 

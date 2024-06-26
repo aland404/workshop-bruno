@@ -35,9 +35,9 @@ L'écriture d'un test se fait de la façon suivante :
 // le test à exécuter
 test("Intitulé de mon test, ce que je veux tester", function() {
   //// contenu du test ////
-  const data = res.getBody();
+  const data = res.body
   // ce que je veux vérifier, ce à quoi je m'attends
-  expect(res.getStatus()).to.equal(200);
+  expect(res.status).to.equal(200)
 });
 ```
 
@@ -55,7 +55,7 @@ Essayez de définir le même test que précédement mais de manière déclarativ
 
 Si vous exécutez la requête, vous pourrez voir dans l'onglet `Tests` de la partie de droite le résultat de votre test précédent et de votre nouvelle assertion.
 
-Vous pouvez combiner les tests scriptés et déclaratifs. Les tests déclaratifs devraient couvrir la plupart de vos besoins en matière de tests mais pour les tests complexes, vous pouvez écrire des tests scriptés.
+Vous pouvez combiner les tests scriptés et déclaratifs. Les tests déclaratifs devraient couvrir la plupart de vos besoins en matière de tests, mais pour des tests plus complexes, vous pouvez écrire des tests scriptés.
 
 ### __On nous a hacké ! 🚨__
 
@@ -66,8 +66,8 @@ Heureusement, leur hacking laisse des traces, et vous êtes capable d'identifier
 Pour cela il faut vérifier que:
 - le statut http de la requête est différent de 666 (`res.status`)
 - le type de retour est un objet ou une liste `(typeof value === 'object')`
-- qu'aucun des champs d'un objet ou d'une liste d'objet ne contient "Vive l'empire !", peut importe la casse (`JSON.stringify`)
-- si un champ currentDate est renvoyé, il correspond à la date du jour au format `dd/mm/yyyy
+- qu'aucun des champs d'un objet ou d'une liste d'objet ne contient `Vive l'empire !`, peut importe la casse (`JSON.stringify(res.body).toUpperCase()`)
+- si un champ `currentDate` est renvoyé, il correspond à la date du jour au format `dd/mm/yyyy`
 
 Vous allez devoir ajouter ces vérifications pour toutes les requêtes de votre collection pour être sûr de vous.
 
@@ -75,7 +75,9 @@ Cela peut s'avérer long et répétitif, surtout si vous avez beaucoup de requê
 
 Heureusement il est possible de définir des tests au niveau de la collection. Tests qui seront exécutés avant chaque requête. Cependant il faudra nécessairement écrire des tests programatiques, ceci n'est pas possible avec les tests déclaratifs.
 
-Pour ce faire, faites un clic droit sur votre collection (ou clic sur les trois petits points ...) et cliquez sur `Settings`. Vous devriez alors reconnaître l'onglet `Tests`que vous commencez à connaître. Ecrivez ici des tests pour valider les quatres points ci-dessus vous assurant de la fiabilité des requêtes. Ces tests necessitent un peu de code, vous pouvez copier coller les bout de codes qu'avait préparé un de vos camarades techniciens.
+Pour ce faire, faites un clic droit sur votre collection (ou clic sur les trois petits points ...) et cliquez sur `Settings`. Vous devriez alors reconnaître l'onglet `Tests`que vous commencez à connaître. Ecrivez ici des tests pour valider les quatres points ci-dessus vous assurant de la fiabilité des requêtes.
+
+Ces tests necessitent un peu de code, vous pouvez copier/coller les bout de codes qu'avait préparé un de vos camarades techniciens :
 
 <Solution title="le statut http de la requête est différent de 666">
 
@@ -145,9 +147,9 @@ function getCurrentDateFormatted() {
 
 </Solution>
 
-Maintenant si vous executez une requête de votre collection, celle-ci lancera tous ces tests.
+Maintenant, si vous executez une requête de votre collection, celle-ci lancera tous ces tests.
 
-Vous pouvez également lancer un ensemble de requêtes d'un seul coup (les requêtes d'un dossier ou d'une collection) via un clic droit (ou les trois petits points ...) > `Run` > `Recursive run`.
+Vous pouvez également lancer un ensemble de requêtes d'un seul coup (les requêtes d'un dossier ou d'une collection) via un clic droit (ou les trois petits points ...) > `Run` > `Recursive run` OU `Run collection`.
 
 Un onglet `Runner` s'ouvre alors avec l'ensemble des requêtes appelées et l'ensemble des tests exéctués pour chacune de ces requêtes.
 
@@ -169,7 +171,7 @@ Téléchargez la collection en cliquant [ICI](https://github.com/aland404/worksh
 
 #### Importer la collection
 
-Cliquez sur les trois petits points en haut à gauche de Bruno > cliquez sur `Import Collection` > sélectionnez le type de collection `Bruno Collection` > sélectionnez le fichier de la collection téléchargée précédemment.
+Cliquez sur les trois petits points en haut à gauche de Bruno > cliquez sur `Import Collection` >  `Bruno Collection` > sélectionnez le fichier de la collection téléchargée précédemment.
 
 <img src="./assets/chapter-6/bruno_import_collection.png" width="200" height="200">
 <img src="./assets/chapter-6/bruno_import_bruno_collection.png" width="400" height="400">
@@ -188,6 +190,12 @@ L'import/export d'une collection ne conserve pas les tests au niveau de la colle
 Clic droit sur la collection > `Run` > `Run collection`
 
 Supprimez les requêtes en erreur s'il y en a, ne conservez que celles qui valident toutes les vérifications.
+
+<Solution title="Y a t'il des requêtes en erreur ?">
+
+Oui, 5 requêtes sur 8 ont été compromises par l'empire.
+
+</Solution>
 
 Vous pouvez rappatrier ces requêtes dans votre collection initiale si vous le souhaitez.
 Bruno ne permet pas de déplacer une requête d'une collection vers une autre.

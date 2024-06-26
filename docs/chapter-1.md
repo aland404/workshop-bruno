@@ -4,7 +4,7 @@ Bienvenue dans la mission secrète de la Résistance !
 
 Vous êtes le seul membre de l'équipe technique de la Résistance capable de les aider à vaincre l'Empire en utilisant l'API Star Wars.
 
-Vous utiliserez Bruno, un nouvel outil de la résistance, pour intéragir avec le système centralisé de gestion des personnages et des ressources de la résistance.
+Vous utiliserez Bruno, un nouvel outil de la résistance, pour intéragir avec le système centralisé de gestion des types de personnages et des ressources de la résistance.
 
 ## Objectifs de la Mission 🎯
 

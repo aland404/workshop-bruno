@@ -12,7 +12,7 @@ import People from '../components/People.vue';
 
 ## Découverte de l'API Star Wars
 
-Parcourez [la documentation de l'API](http://localhost:3000/api#/)
+Parcourez rapidement [la documentation de l'API](http://localhost:3000/api#/) si vous le souhaitez
 
 Cette API permet de manipuler les types de personnages des différentes factions (empire et rébellion).
 
@@ -31,12 +31,12 @@ Elle permet également de consulter les différentes guerres et batailles qui se
 
 #### Première collection
 
-Commencez par créer une collection (regroupement de requêtes) et des requêtes dans celle-ci.
+Commencez par créer une collection (un regroupement de requêtes) et des requêtes dans celle-ci.
 
 :::warning Évitez les espaces et caractères spéciaux dans le nommage de votre collection
 :::
 
-Pour ceci, cliquez sur les trois petits points (...) dans la partie supérieure droite du menu de gauche de Bruno, cliquez sur `Create Collection`, complétez le formulaire (gardez en tête le chemin que vous choisirez pour sauvegarder votre collection, le champ `Location`) puis cliquez sur le bouton `Create`.
+Pour ceci, cliquez sur les trois petits points (...) dans la partie supérieure droite du menu de gauche de Bruno, cliquez sur `Create Collection` > complétez le formulaire (gardez en tête le chemin que vous choisirez pour sauvegarder votre collection, le champ `Location`) > cliquez sur le bouton `Create`.
 
 <img src="./assets/chapter-3/bruno_create_collection_menu.png" width="300" height="300">
 <img src="./assets/chapter-3/bruno_create_collection_popup.png" width="300" height="300">
@@ -53,9 +53,9 @@ C'est pour cela que lorsque vous créez une collection, Bruno vous demande un ch
 
 #### Première requête
 
-Une fois la collection prête, créez une requête pour lire les informations des personnages de la galaxie en requêtant l'api `GET`: http://localhost:3000/star-wars/people
+Une fois la collection prête, créez une requête pour lire les informations des types de personnages de la galaxie en requêtant l'api `GET`: http://localhost:3000/star-wars/people
 
-Pour se faire, faites un clic droit sur le nom de votre collection ou cliquez sur les trois petits points (...) à droite du nom de celle-ci > cliquez sur `New Request` > complétez le formulaire > cliquez sur le bouton "Create".
+Pour se faire, faites un clic droit sur le nom de votre collection ou cliquez sur les trois petits points (...) à droite du nom de celle-ci > cliquez sur `New Request` > complétez le formulaire > cliquez sur le bouton `Create`.
 
 <img src="./assets/chapter-3/bruno_new_request_menu.png" width="300" height="300">
 <img src="./assets/chapter-3/bruno_new_request_popup.png" width="300" height="300">
@@ -78,14 +78,14 @@ Bruno utilise le langage Bru pour enregistrer les détails d'une requête API da
 
 C'est un langage de balisage simple avec une sémantique de type JSON.
 
-Ouvrez le fichier sur votre ordinateur représentant la requête que vous venez de créer (avec un extension .bru). Il se trouve à l'emplacement où vous avez choisi de sauvegarder votre collection.
+Ouvrez le fichier (avec une extension .bru) sur votre ordinateur représentant la requête que vous venez de créer (via un éditeur de texte ou un IDE). Il se trouve à l'emplacement où vous avez choisi de sauvegarder votre collection.
 
 Il devrait ressembler à ceci:
 
 <img src="./assets/chapter-3/bruno_bru_file.png" width="500" height="500">
 
 
-Pour plus d'information, consultez la [documentation sur le Bru language](https://www.brulang.org/).
+(Pour plus d'information, consultez la [documentation sur le Bru language](https://www.brulang.org/))
 
 <br/>
 
@@ -95,12 +95,16 @@ Il est possible d'organiser une collection à l'aide de dossiers, pour ceci fait
 
 Créez quatre dossiers pour les requêtes concernant les types de personnages, les guerres, les batailles et le système d'authentification.
 
-En vous aidant de [la documentation de l'API](http://localhost:3000/api#/) complétez les dossiers en créant de nouvelles requêtes
+En vous aidant de [la documentation de l'API](http://localhost:3000/api#/) complétez les dossiers en créant de nouvelles requêtes.
 
 ::: tip Astuce
-Pour gagner du temps sur la création de nouvelles requêtes, vous pouvez repartir d'une requête précédente en la clonant (clic droit, "Clone").
+Pour gagner du temps sur la création de nouvelles requêtes, vous pouvez repartir d'une requête précédente en la clonant (clic droit > `Clone` > nommez votre nouvelle requête).
 :::
 
+::: warning Pensez à conserver la base_url sur vos futures requêtes (`http://localhost:3000/`) qui n'est pas indiquée dans la documentation de l'API
+:::
+
+Ajoutez les requêtes suivantes :
 - pour les types de personnages
   - voir les types de personnages d'une faction
     - cette requête nécessite un query param, pour ce faire => `http://mon-url?queryParamName=queryParamValue`
@@ -109,14 +113,14 @@ Pour gagner du temps sur la création de nouvelles requêtes, vous pouvez repart
   - voir les informations de toutes les guerres
   - voir les informations d'une guerre
   - voir le résumé d'une guerre
-- pour les batailles (vous pouvez mettre le dossier dans celui des guerres)
+- pour les batailles (vous pouvez déplacer le dossier dans celui des guerres)
   - voir une bataille
   - voir le résumé d'une bataille
 - pour l'authentification
   - récupérer un passport galactique (requête `POST`)
 
 Pour récupérer un passport galactique, vous allez devoir passer un body à votre requête (cf [doc API](http://localhost:3000/api#/auth/AuthController_getGalacticPassport)). 
-Pour renseigner le body, cliquez sur l'onglet `Body` dans Bruno, puis sur `No body` et sélection `JSON` dans le menu déroulant qui s'affiche.
+Pour renseigner le body, cliquez sur l'onglet `Body` dans Bruno > `No body` > sélectionnez `JSON` dans le menu déroulant qui s'affiche.
 
 <img src="./assets/chapter-3/bruno_set_json_body.png" width="300" height="300">
 

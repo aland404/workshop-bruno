@@ -38,7 +38,7 @@ Il est également possible de configurer, lire et/ou modifier des variables de "
 
 ## Variables de collection
 
-Il est possible de configurer des variables de deux manières, programmatique et déclarative.
+Il est possible de configurer des variables de manière programmatique et/ou déclarative.
 
 ### Variables programmatiques
 
@@ -53,7 +53,7 @@ Pour manipuler des variables de manière déclarative, il faudra le faire dans l
 
 <img src="./assets/chapter-5/bruno_set_vars_declaratively.png" width="450" height="450">
 
-Bruno attend une valeur dans `Pre Request` alors que dans la partie `Post Response` c'est une expression, où l'objet ```res``` est directement accessible.
+Bruno attend une valeur dans `Pre Request` alors que dans la partie `Post Response` il attend une expression JS valide, où l'objet ```res``` est directement accessible.
 
 <img src="./assets/chapter-5/bruno_set_vars_declaratively_result.png" width="450" height="450">
 
@@ -67,14 +67,13 @@ Vars Pre Request > Script Pre Request > Vars Post Response > Script Post Respons
 
 ___A vous de jouer !___
 
-- Stocker votre passeport galactique dans une variable de "collection" nommée `galactic_passport` (`res.body.galacticPassport`)
+- Stocker votre passeport galactique dans une variable de "collection" nommée `galactic_passport` (`bru.setVar('galactic_passport', res.body.galacticPassport)`)
 - Ajoutez une requête pour faire progresser un des types de personnage
   - cette requête nécessite votre passeport galactique
   - utilisez votre passport pour vous identifier, deux possibilités:
-    - dans l'onglet `Headers` > `Add Header` > Name: `Authorization` | Value: `Votre passeport`
+    - dans l'onglet `Headers` > `Add Header` > Name: `Authorization` | Value: Bearer &#123;&#123;galactic_passport&#125;&#125;
     - OU
-    - dans l'onglet `Auth` > `Bearer Token` > `Votre passeport` dans le champ token
-  - utilisez votre variable `galactic_passport`
+    - dans l'onglet `Auth` > `Bearer Token` > insérez &#123;&#123;galactic_passport&#125;&#125; dans le champ `Token`
 
 ::: tip Astuce
 Pour vérifier si vos variables sont correctement configurées, vous pouvez faire un `console.log` ou cliquez sur l'icône en forme d'oeil en haut à droite de Bruno. Elle permet d'afficher les variables de collection et d'environnement.

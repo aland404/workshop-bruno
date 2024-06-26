@@ -22,7 +22,7 @@ node -v # v16+
 
 ## Récupération de l'API Star Wars
 
-- Clonez le code source du codelab
+- Récupérez l'API
 
 ```shell
 git clone https://github.com/aland404/star-wars-api.git
@@ -52,7 +52,7 @@ Vous devriez voir les logs suivants:
 
 <img src="./assets/chapter-2/server_starts_with_success.png">
 
-[La documentation de l'API](http://localhost:3000/api#/) est maintenant accessible
+[La documentation de l'API](http://localhost:3000/api#/) est maintenant accessible en local
 
 
 ::: warning
