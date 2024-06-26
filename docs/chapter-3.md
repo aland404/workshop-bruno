@@ -16,6 +16,11 @@ Parcourez [la documentation de l'API](http://localhost:3000/api#/)
 
 Cette API permet de manipuler les types de personnages des différentes factions (empire et rébellion).
 
+:::tip Info ℹ️
+Les informations des blocs ci-dessous, correspondent à des informations renvoyées par votre API en local.
+Vous pouvez à tout moment rafraîchir ces données en cliquant sur les boutons `Rafraichir les données` en bas à droite.
+:::
+
 <People />
 
 Elle permet également de consulter les différentes guerres et batailles qui se déroulent en ce moment même dans la galaxie.

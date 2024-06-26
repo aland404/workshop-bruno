@@ -19,6 +19,7 @@ async function fetchBattleSummary() {
   try {
     const response = await fetch(`http://localhost:3000/star-wars/wars/${props.warSlug}/battles/${props.battleSlug}/summary`)
     battle.value = await response.json()
+    fetchHasFailed.value = false
   } catch(error) {
     fetchHasFailed.value = true
   } finally {
@@ -108,11 +109,13 @@ onMounted(() => {
   justify-content: right;
   .button {
     cursor: pointer;
-    background-color: var(--vp-c-green-2);
+    background-color: #20724a;
     border: 1px solid var(--vp-c-divider);
     border-radius: 8px;
     padding: 5px;
     transition: border-color 0.25s;
+    font-size: 1.2rem;
+    padding: 10px;
   }
   .button:hover {
     border-color: var(--vp-c-green-1);

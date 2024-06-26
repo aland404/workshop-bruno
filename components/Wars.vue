@@ -15,6 +15,7 @@ async function fetchWars() {
   try {
     const response = await fetch("http://localhost:3000/star-wars/wars")
     warsInfo.value = await response.json()
+    fetchHasFailed.value = false
     if(warsInfo.value.summary.winner === 'rebellion') {
       isRebellionWinning.value = true
       jsConfetti.addConfetti({
@@ -94,11 +95,13 @@ onMounted(() => {
   justify-content: right;
   .button {
     cursor: pointer;
-    background-color: var(--vp-c-green-2);
+    background-color: #20724a;
     border: 1px solid var(--vp-c-divider);
     border-radius: 8px;
     padding: 5px;
     transition: border-color 0.25s;
+    font-size: 1.2rem;
+    padding: 10px;
   }
   .button:hover {
     border-color: var(--vp-c-green-1);
