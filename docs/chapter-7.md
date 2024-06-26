@@ -76,7 +76,7 @@ Heureusement, un serveur distant est disponible :
 
 Créez un repository sur votre compte Github et déposez-y le dossier représentant votre collection Bruno.
 
-`Add file` > `Upload files`
+`Add file` > `Upload files` > sélectionnez votre collection dans la fenêtre qui s'ouvre > `Commit Changes`
 
 <br/> 
 
@@ -182,3 +182,16 @@ jobs:
 
 </Solution>
 
+Cette Github Actions s'exécute à chaque commit sur main ou sur une pull request et peut également être déclenchée manuellement.
+
+Vous devriez voir le résultat de votre Github Actions dans l'onglet `Actions` de votre repository.
+
+<img src="./assets/chapter-7/github_actions_bruno_cli_workflow.png">
+
+Cliquez sur le `Job` nommé `Test Report` dans la partie gauche de l'écran pour voir le détail du rapport de l'exécution de vos requêtes.
+
+<img src="./assets/chapter-7/github_actions_test_report.png">
+
+Félicitations, vous avez créé votre première pipeline de delivery avec Bruno 🎉
+
+Encore une dernière étape pour les plus téméraires.

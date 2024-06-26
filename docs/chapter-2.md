@@ -10,6 +10,10 @@
 
 Assurez-vous d'avoir [NodeJS](https://nodejs.org/en/) en version 16 ou supérieure
 
+:::info
+Si vous avez déjà une version antérieure que vous souhaitez conserver, vous pouvez vous tourner vers `nvm` pour gérer plusieurs versions de node facilement sur votre ordinateur.
+:::
+
 ```shell
 node -v # v16+
 ```

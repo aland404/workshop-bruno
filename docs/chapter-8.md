@@ -66,6 +66,22 @@ function getCurrentDateFormatted() {
 
 </Solution>
 
+:::info
+Pour prendre en compte en compte des collections qui intègrent des librairies externes dans une pipeline de delivery il faudra légèrement modifier le fichier de configuration de celle-ci en ajoutant une ligne pour installer les dépendances correspondantes.
+
+```
+- name: Run tests
+        run: |
+          cd solutions
+          npm install # Installation des dépendances de la collection
+          bru run chapter-7 -r --env ${{ env.ENVIRONMENT }} --output junit.xml --format junit --env-var password=${{ env.PASSWORD }}
+```
+:::
+
+Mettez à jour votre repository Github avec votre collection qui intègre la librairie `dayjs`.
+
+N'oubliez pas de mettre à jour le fichier YAML de configuration de votre Github Actions.
+
 
 ## C'est fini ! 😱
 
