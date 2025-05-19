@@ -22,7 +22,13 @@ node -v # v16+
 
 ## Récupération de l'API Star Wars
 
-- Récupérez l'API
+Deux possibilités ici :
+
+1. Télécharger le binaire de l'API
+
+[Lien de téléchargement](https://raw.githubusercontent.com/aland404/star-wars-api/refs/heads/main/star-wars)
+
+2. Récupérez le repo de l'API
 
 ```shell
 git clone https://github.com/aland404/star-wars-api.git
